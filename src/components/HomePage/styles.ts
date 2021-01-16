@@ -6,77 +6,99 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   min-height: 100vh;
-  background: #000;
+  justify-content: center;
+  align-items: center;
+  background: red;
 `
 
-export const TriangleContainer = styled(motion.div)`
+export const TriangleContainer = styled(motion.div).attrs({
+  initial: { y: 0 },
+  animate: { y: [0, 0.8, 1, 0.8, 0] },
+  transition: { duration: 2, repeat: Infinity, ease: 'linear' }
+})`
   display: flex;
-  width: 100%;
-  height: 50%;
+  box-sizing: content-box;
+  width: 100vw;
+  height: 50vh;
   justify-content: center;
   align-items: center;
 
-  @media only screen and (max-width: 800px) {
-    height: 65%;
+  background: blue;
+
+  @media only screen and (width: 768px) {
+    height: 50vh;
+  }
+  @media only screen and (max-width: 600px) {
+    height: 50vh;
   }
 `
 export const Image = styled(motion.img).attrs({
   animate: { rotate: 360 },
   transition: { duration: 20, loop: Infinity, ease: 'linear' }
 })`
-  width: 100%;
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (width: 768px) {
     width: 200px;
     height: 200px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 180px;
+    height: 180px;
   }
 `
 export const Triangle = styled(motion.div)`
   display: flex;
 
-  width: 860px;
-  height: 860px;
-  background: black;
-  border: 1px solid #000;
-
+  width: 820px;
+  height: 820px;
+  background: white;
   clip-path: polygon(50% 45%, 0% 100%, 100% 100%);
 
-  @media only screen and (max-width: 800px) {
-    width: 100%;
-    height: 485px;
-    background: black;
+  @media only screen and (width: 768px) {
+    width: 585px;
+    height: 585px;
+    background: white;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 70vh;
+    width: 595px;
+    height: 595px;
   }
 `
 
 export const About = styled(motion.div)`
   display: flex;
   position: absolute;
-  width: 310px;
-  height: 250px;
-  background: #17202a;
+  width: 18.5em;
+  height: 15em;
+  background: url('/bricksjpg');
   justify-content: center;
   align-items: center;
   border: none;
+
   clip-path: polygon(50% 33%, 0% 100%, 100% 100%);
 
-  @media (width: 1440px) {
-    clip-path: polygon(50% 33%, 0% 100%, 100% 100%);
+  @media only screen and (width: 768px) {
+    width: 220px;
+    height: 180px;
   }
-
-  @media only screen and (max-width: 800px) {
-    width: 35%;
-    height: 150px;
+  @media only screen and (max-width: 600px) {
+    width: 35.5vw;
+    height: 30vh;
   }
 `
 
 export const AboutText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' }
+  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' },
+  whileTap: { textShadow: '#000  3px 2px 4px', color: '#FFFF00', scale: 1.2 }
 })`
   margin-top: 135px;
-  margin-right: 7px;
+  margin-right: 8px;
   font-size: 46px;
   font-family: 'Oswald';
   font-weight: bold;
@@ -89,8 +111,14 @@ export const AboutText = styled(motion.button).attrs({
   background: none;
   text-transform: uppercase;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (width: 768px) {
     font-size: 18px;
+    margin-top: 80px;
+    margin-right: 2.5px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 22px;
     margin-top: 80px;
     margin-right: 2.5px;
   }
@@ -99,24 +127,35 @@ export const AboutText = styled(motion.button).attrs({
 export const Project = styled(motion.div)`
   display: flex;
   position: absolute;
-  margin-top: 280px;
-  width: 525px;
-  height: 220px;
+  top: 170px;
+  width: 34em;
+  height: 16.5em;
   justify-content: center;
   align-items: center;
-  background: #17202a;
+  background: url('/bricksjpg');
+  z-index: 2;
 
-  clip-path: polygon(20% 45%, 80% 45%, 99.5% 96.5%, 0.5% 96%);
-  @media only screen and (max-width: 800px) {
-    width: 61.5%;
-    height: 150px;
-    margin-top: 170px;
-    clip-path: polygon(21% 45%, 79% 45%, 99.5% 93.5%, 0% 94%);
+  clip-path: polygon(22% 45%, 78% 45%, 100% 96.5%, 0% 96%);
+
+  @media only screen and (width: 768px) {
+    width: 340px;
+    height: 120px;
+    top: 183px;
+    clip-path: polygon(17% 45%, 83% 45%, 99.5% 96.5%, 0.5% 96%);
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 63vw;
+    height: 30vh;
+    top: 155px;
+
+    clip-path: polygon(21% 45%, 79% 45%, 100% 96.5%, 0.5% 96%);
   }
 `
 
 export const ProjectText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' }
+  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' },
+  whileTap: { textShadow: '#000  3px 2px 4px', color: '#FFFF00', scale: 1.2 }
 })`
   font-size: 46px;
   font-family: 'Oswald';
@@ -126,36 +165,46 @@ export const ProjectText = styled(motion.button).attrs({
   border: none;
   outline: none;
   background: none;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
   text-shadow: #474747 3px 2px 4px;
   text-transform: uppercase;
   margin-top: 90px;
 
   @media only screen and (max-width: 800px) {
-    font-size: 18px;
+    font-size: 22px;
     margin-top: 60px;
   }
 `
 export const Contact = styled(motion.div)`
   display: flex;
   position: absolute;
-  margin-top: 535px;
-  width: 875px;
-  height: 450px;
+  top: 235.5px;
+  width: 64.5vw;
+  height: 64vh;
   justify-content: center;
+  overflow: hidden;
+  border: none;
   align-items: center;
-  background: #17202a;
-  clip-path: polygon(20% 45%, 80% 45%, 96.5% 80%, 3.5% 80%);
+  background: url('/bricksjpg');
+  clip-path: polygon(19% 45%, 81% 45%, 96.5% 80%, 3.5% 80%);
 
-  @media only screen and (max-width: 800px) {
-    width: 97.5%;
-    height: 255px;
-    margin-top: 333px;
-    clip-path: polygon(18% 45%, 82% 45%, 97.5% 80%, 2.5% 80%);
+  @media only screen and (width: 768px) {
+    width: 585px;
+    height: 267px;
+    top: 179px;
+
+    clip-path: polygon(21% 46%, 79% 46%, 100% 96%, 0% 96%);
+  }
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
+    height: 41vh;
+    top: 215px;
+    clip-path: polygon(18% 46%, 82% 46%, 100% 96%, 0% 96%);
   }
 `
 export const ContactText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' }
+  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' },
+  whileTap: { textShadow: '#000  3px 2px 4px', color: '#FFFF00', scale: 1.2 }
 })`
   font-size: 48px;
   font-family: 'Oswald';
@@ -169,10 +218,46 @@ export const ContactText = styled(motion.button).attrs({
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   text-shadow: #474747 3px 2px 4px;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (width: 768px) {
     font-size: 20px;
     margin-top: 55px;
   }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 24px;
+    margin-top: 70px;
+  }
+`
+export const CloseGalleryContainer = styled(motion.div)`
+  display: flex;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-top: 500px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+
+  z-index: 2;
+`
+export const CloseGallery = styled(motion.button)`
+  background: white;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+  left: 493px;
 `
 
 // transform: matrix(1, -0.3, 0, 1, 0, 0);
