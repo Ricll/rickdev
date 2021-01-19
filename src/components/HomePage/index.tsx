@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Gallery } from '../Gallery'
 import {
   Container,
-  TriangleContainer,
   Image,
   Triangle,
   About,
@@ -11,77 +10,129 @@ import {
   ProjectText,
   Contact,
   ContactText,
+  AboutContent,
+  AboutImageContainer,
+  AboutImage,
+  AboutDescription,
+  AboutDescriptionTextContainer,
+  AboutDescriptionText,
+  AboutSkills,
   CloseGalleryContainer,
-  CloseGallery
+  CloseGallery,
+  CloseContent
 } from './styles'
 
 const HomePage: React.FC = () => {
-  const [rotate, setRotate] = useState(false)
-  const [about, setAbout] = useState(true)
-  const [gallery, setGallery] = useState(false)
-  const [showCloseGalleryButton, setShowCloseGalleryButton] = useState(false)
-  const [contact, setContact] = useState(false)
-  const projectRotation = {
-    open: { transform: 'rotate(180deg)', width: '0px', height: '0px' },
-    closed: { transform: 'rotate(0deg)' }
+  const [showContent, setShowContent] = useState(true)
+  const [contentTransition, setContentTransition] = useState(true)
+  const [showAbout, setShowAbout] = useState(false)
+  const [displayAbout, setDisplayAbout] = useState(false)
+
+  const contentVariants = {
+    open: { opacity: 1 },
+    closed: { width: '0em' }
   }
 
-  const projectTextOpacity = {
-    open: { opacity: 0.3 },
-    closed: { opacity: 1 }
+  const aboutVariants = {
+    open: { opacity: 1, zIndex: 1 },
+    closed: { opacity: 0, zIndex: -1 }
   }
-
-  function showAbout() {
+  function handleContent() {
     const timeAbout = setTimeout(() => {
-      setGallery(!gallery)
-    }, 1000)
-    setRotate(!rotate)
+      setShowContent(!showContent)
+    }, 5500)
+    setContentTransition(false)
+
     return () => clearTimeout(timeAbout)
   }
 
-  function handleGallery() {
-    const timeGallery = setTimeout(() => {
-      setGallery(!gallery)
-      setShowCloseGalleryButton(!showCloseGalleryButton)
-    }, 1000)
-    setRotate(!rotate)
-    return () => clearTimeout(timeGallery)
+  function handleAbout() {
+    const timeAbout = setTimeout(() => {
+      setShowAbout(!showAbout)
+    }, 5500)
+    setDisplayAbout(true)
+    setContentTransition(!contentTransition)
+
+    return () => clearTimeout(timeAbout)
+  }
+  function backContent() {
+    setContentTransition(!contentTransition)
+    setShowAbout(!showAbout)
   }
   return (
     <Container>
-      <TriangleContainer>
-        <Image src="/sun.png" />
-        <Triangle />
-        {about && (
-          <About onClick={() => showAbout()}>
-            <AboutText type="reset">About</AboutText>
-          </About>
-        )}
+      <Image src="/sun.png" />
+      <Triangle>
+        <About
+          animate={contentTransition ? 'open' : 'closed'}
+          variants={contentVariants}
+          transition={{ duration: 5 }}
+          onClick={() => handleAbout()}
+        >
+          <AboutText type="reset">About</AboutText>
+        </About>
 
         <Project
-          animate={rotate ? 'open' : 'closed'}
-          variants={projectRotation}
-          transition={{ duration: 2 }}
+          animate={contentTransition ? 'open' : 'closed'}
+          variants={contentVariants}
+          transition={{ duration: 5 }}
+          onClick={() => handleContent()}
         >
-          <ProjectText
-            animate={rotate ? 'open' : 'closed'}
-            variants={projectTextOpacity}
-            transition={{ duration: 1 }}
-            onClick={() => handleGallery()}
-          >
-            Projects
-          </ProjectText>
+          <ProjectText>Projects</ProjectText>
         </Project>
-        <Contact>
-          <ContactText>Contact Me</ContactText>
+        <Contact
+          animate={contentTransition ? 'open' : 'closed'}
+          variants={contentVariants}
+          transition={{ duration: 5 }}
+          onClick={() => handleContent()}
+        >
+          <ContactText>Contact</ContactText>
         </Contact>
-        {gallery && <Gallery />}
-        {showCloseGalleryButton && (
-          <CloseGalleryContainer>
-            <CloseGallery onClick={() => handleGallery()}>{'X'}</CloseGallery>
-          </CloseGalleryContainer>
-        )}
-      </TriangleContainer>
+      </Triangle>
+
+      {displayAbout && (
+        <AboutContent
+          animate={showAbout ? 'open' : 'closed'}
+          variants={aboutVariants}
+          transition={{ duration: 1, ease: 'linear' }}
+        >
+          <AboutImageContainer
+            animate={showAbout ? 'open' : 'closed'}
+            variants={aboutVariants}
+            transition={{ duration: 1, ease: 'linear' }}
+          >
+            <AboutImage src="cartoon_profy.png" />
+          </AboutImageContainer>
+
+          <AboutDescription
+            animate={showAbout ? 'open' : 'closed'}
+            variants={aboutVariants}
+            transition={{ duration: 1, ease: 'linear' }}
+          >
+            <AboutDescriptionTextContainer>
+              <AboutDescriptionText title color>
+                Nice to meet you
+              </AboutDescriptionText>
+              <AboutDescriptionText>
+                I&apos;m Junior developer searching for an oportunity. <br></br>
+                I concluded the bootcamp of Rocketseat and I now using this
+                knowledge to build some projects to my portfolio{' '}
+              </AboutDescriptionText>
+            </AboutDescriptionTextContainer>
+          </AboutDescription>
+          <AboutSkills
+            animate={showAbout ? 'open' : 'closed'}
+            variants={aboutVariants}
+            transition={{ duration: 1, ease: 'linear' }}
+          ></AboutSkills>
+          <CloseContent
+            animate={showAbout ? 'open' : 'closed'}
+            variants={aboutVariants}
+            transition={{ duration: 1, ease: 'linear' }}
+            onClick={() => backContent()}
+          />
+        </AboutContent>
+      )}
     </Container>
   )
 }

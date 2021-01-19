@@ -1,82 +1,43 @@
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import styled, { StyledComponent } from 'styled-components'
+import { motion, HTMLMotionProps, ForwardRefComponent } from 'framer-motion'
 export const Container = styled.div`
-  display: column;
+  display: flex;
   width: 100vw;
   height: 100vh;
-  min-height: 100vh;
   justify-content: center;
-  align-items: center;
-  background: red;
-`
-
-export const TriangleContainer = styled(motion.div).attrs({
-  initial: { y: 0 },
-  animate: { y: [0, 0.8, 1, 0.8, 0] },
-  transition: { duration: 2, repeat: Infinity, ease: 'linear' }
-})`
-  display: flex;
-  box-sizing: content-box;
-  width: 100vw;
-  height: 50vh;
-  justify-content: center;
-  align-items: center;
-
-  background: blue;
-
-  @media only screen and (width: 768px) {
-    height: 50vh;
-  }
-  @media only screen and (max-width: 600px) {
-    height: 50vh;
-  }
-`
-export const Image = styled(motion.img).attrs({
-  animate: { rotate: 360 },
-  transition: { duration: 20, loop: Infinity, ease: 'linear' }
-})`
-  position: absolute;
-  width: 280px;
-  height: 280px;
-
-  @media only screen and (width: 768px) {
-    width: 200px;
-    height: 200px;
-  }
-
-  @media only screen and (max-width: 600px) {
-    width: 180px;
-    height: 180px;
-  }
 `
 export const Triangle = styled(motion.div)`
   display: flex;
+  box-sizing: border-box;
+  margin-top: 15px;
+  width: 950px;
+  height: 600px;
+  justify-content: center;
 
-  width: 820px;
-  height: 820px;
-  background: white;
-  clip-path: polygon(50% 45%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 20%, 0% 100%, 100% 100%);
 
   @media only screen and (width: 768px) {
-    width: 585px;
-    height: 585px;
-    background: white;
+    width: 750px;
+    height: 500px;
+
+    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
   }
 
   @media only screen and (max-width: 600px) {
-    height: 70vh;
-    width: 595px;
-    height: 595px;
+    height: 20em;
+    width: 20em;
+    margin-top: 75px;
+    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
   }
 `
-
 export const About = styled(motion.div)`
   display: flex;
   position: absolute;
-  width: 18.5em;
-  height: 15em;
-  background: url('/bricksjpg');
+  width: 25em;
+  height: 20em;
+  background-image: url('/bricksjpg');
+
   justify-content: center;
   align-items: center;
   border: none;
@@ -84,22 +45,25 @@ export const About = styled(motion.div)`
   clip-path: polygon(50% 33%, 0% 100%, 100% 100%);
 
   @media only screen and (width: 768px) {
-    width: 220px;
-    height: 180px;
+    width: 20em;
+    height: 16em;
+
+    clip-path: polygon(50% 3%, 0% 100%, 100% 100%);
   }
   @media only screen and (max-width: 600px) {
-    width: 35.5vw;
-    height: 30vh;
+    width: 9em;
+    height: 10.5em;
+    clip-path: polygon(51% 3%, 0% 100%, 100% 100%);
   }
 `
 
 export const AboutText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' },
-  whileTap: { textShadow: '#000  3px 2px 4px', color: '#FFFF00', scale: 1.2 }
+  whileHover: { textShadow: '#000 3px 2px 4px', color: '#FFFF00' },
+  whileTap: { textShadow: '#000 3px 2px 4px', color: '#FFFF00', scale: 1.2 }
 })`
-  margin-top: 135px;
+  margin-top: 185px;
   margin-right: 8px;
-  font-size: 46px;
+  font-size: 3rem;
   font-family: 'Oswald';
   font-weight: bold;
   color: #ffff;
@@ -112,9 +76,9 @@ export const AboutText = styled(motion.button).attrs({
   text-transform: uppercase;
 
   @media only screen and (width: 768px) {
-    font-size: 18px;
-    margin-top: 80px;
-    margin-right: 2.5px;
+    font-size: 3rem;
+    margin-top: 130px;
+    margin-right: 5px;
   }
 
   @media only screen and (max-width: 600px) {
@@ -127,37 +91,37 @@ export const AboutText = styled(motion.button).attrs({
 export const Project = styled(motion.div)`
   display: flex;
   position: absolute;
-  top: 170px;
-  width: 34em;
+  top: 220px;
+  width: 42em;
   height: 16.5em;
   justify-content: center;
   align-items: center;
   background: url('/bricksjpg');
   z-index: 2;
 
-  clip-path: polygon(22% 45%, 78% 45%, 100% 96.5%, 0% 96%);
+  clip-path: polygon(20% 45%, 80% 45%, 100% 96.5%, 0% 96%);
 
   @media only screen and (width: 768px) {
-    width: 340px;
-    height: 120px;
+    width: 32em;
+    height: 12.5em;
     top: 183px;
     clip-path: polygon(17% 45%, 83% 45%, 99.5% 96.5%, 0.5% 96%);
   }
 
   @media only screen and (max-width: 600px) {
-    width: 63vw;
-    height: 30vh;
-    top: 155px;
+    width: 15em;
+    height: 9em;
+    top: 180px;
 
-    clip-path: polygon(21% 45%, 79% 45%, 100% 96.5%, 0.5% 96%);
+    clip-path: polygon(20% 45%, 80% 45%, 100% 96.5%, 0.5% 96%);
   }
 `
 
 export const ProjectText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' },
-  whileTap: { textShadow: '#000  3px 2px 4px', color: '#FFFF00', scale: 1.2 }
+  whileHover: { textShadow: '#000 3px 2px 4px', color: '#FFFF00' },
+  whileTap: { textShadow: '#000 3px 2px 4px', color: '#FFFF00', scale: 1.2 }
 })`
-  font-size: 46px;
+  font-size: 3.1rem;
   font-family: 'Oswald';
   font-weight: bold;
   color: #ffff;
@@ -168,9 +132,13 @@ export const ProjectText = styled(motion.button).attrs({
   letter-spacing: 0.15rem;
   text-shadow: #474747 3px 2px 4px;
   text-transform: uppercase;
-  margin-top: 90px;
+  margin-top: 105px;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (width: 768px) {
+    font-size: 3rem;
+    margin-top: 75px;
+  }
+  @media only screen and (max-width: 600px) {
     font-size: 22px;
     margin-top: 60px;
   }
@@ -178,33 +146,31 @@ export const ProjectText = styled(motion.button).attrs({
 export const Contact = styled(motion.div)`
   display: flex;
   position: absolute;
-  top: 235.5px;
-  width: 64.5vw;
-  height: 64vh;
+  top: 305px;
+  width: 65em;
+  height: 24em;
   justify-content: center;
-  overflow: hidden;
-  border: none;
   align-items: center;
   background: url('/bricksjpg');
-  clip-path: polygon(19% 45%, 81% 45%, 96.5% 80%, 3.5% 80%);
+  clip-path: polygon(17% 45%, 83% 45%, 96.5% 80%, 3.5% 80%);
 
   @media only screen and (width: 768px) {
-    width: 585px;
-    height: 267px;
-    top: 179px;
+    width: 47em;
+    height: 17em;
+    top: 253px;
 
-    clip-path: polygon(21% 46%, 79% 46%, 100% 96%, 0% 96%);
+    clip-path: polygon(16% 46%, 84% 46%, 100% 96%, 0% 96%);
   }
   @media only screen and (max-width: 600px) {
-    width: 100vw;
-    height: 41vh;
-    top: 215px;
-    clip-path: polygon(18% 46%, 82% 46%, 100% 96%, 0% 96%);
+    width: 20em;
+    height: 15em;
+    top: 210px;
+    clip-path: polygon(13% 46%, 87% 46%, 110% 96%, -10% 96%);
   }
 `
 export const ContactText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000  3px 2px 4px', color: '#FFFF00' },
-  whileTap: { textShadow: '#000  3px 2px 4px', color: '#FFFF00', scale: 1.2 }
+  whileHover: { textShadow: '#000 3px 2px 4px', color: '#FFFF00' },
+  whileTap: { textShadow: '#000 3px 2px 4px', color: '#FFFF00', scale: 1.2 }
 })`
   font-size: 48px;
   font-family: 'Oswald';
@@ -223,9 +189,13 @@ export const ContactText = styled(motion.button).attrs({
     margin-top: 55px;
   }
 
+  @media only screen and (width: 768px) {
+    font-size: 3rem;
+    margin-top: 105px;
+  }
   @media only screen and (max-width: 600px) {
-    font-size: 24px;
-    margin-top: 70px;
+    font-size: 22px;
+    margin-top: 60px;
   }
 `
 export const CloseGalleryContainer = styled(motion.div)`
@@ -259,6 +229,143 @@ export const CloseGallery = styled(motion.button)`
   z-index: 2;
   left: 493px;
 `
+export const Image = styled(motion.img).attrs({
+  animate: { rotate: 360 },
+  transition: { duration: 20, loop: Infinity, ease: 'linear' }
+})`
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  top: 10px;
+  border-radius: 50%;
+  @media only screen and (width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
 
-// transform: matrix(1, -0.3, 0, 1, 0, 0);
-// clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  @media only screen and (max-width: 600px) {
+    top: 45px;
+    width: 180px;
+    height: 180px;
+  }
+`
+
+export const CloseContent = styled(motion.button)`
+  display: flex;
+  position: relative;
+
+  background: white;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  left: 200px;
+  top: -150px;
+  z-index: 2;
+`
+export const AboutContent = styled(motion.div)`
+  display: column;
+  position: absolute;
+  box-sizing: border-box;
+  margin-top: 15px;
+  width: 950px;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+
+  clip-path: polygon(50% 20%, 0% 100%, 100% 100%);
+
+  @media only screen and (width: 768px) {
+    width: 750px;
+    height: 500px;
+
+    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 20em;
+    width: 20em;
+    margin-top: 75px;
+    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
+  }
+`
+
+export const AboutImageContainer = styled(motion.div)`
+  display: flex;
+  position: relative;
+  width: 25em;
+  height: 20em;
+  left: 275px;
+  top: 0px;
+  justify-content: center;
+  align-items: center;
+
+  background: #0d0d0d;
+
+  clip-path: polygon(50% 33%, 0% 100%, 100% 100%);
+`
+export const AboutImage = styled(motion.img)`
+  display: flex;
+  position: relative;
+  width: 140px;
+  height: 140px;
+  left: 0px;
+  top: 75px;
+  background: #000;
+  border-radius: 50%;
+  object-fit: cover;
+`
+export const AboutDescription = styled(motion.div)`
+  display: flex;
+  position: relative;
+  width: 42em;
+  height: 16.5em;
+  justify-content: center;
+  align-items: center;
+  left: 140px;
+  top: -115px;
+  background: #0d0d0d;
+
+  clip-path: polygon(20% 45%, 80% 45%, 100% 96.5%, 0% 96%);
+`
+export const AboutDescriptionTextContainer = styled.div`
+  display: column;
+  width: 25em;
+  height: 8em;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+`
+export const AboutDescriptionText: StyledComponent<
+  ForwardRefComponent<HTMLHeadingElement, HTMLMotionProps<'h1'>>,
+  any,
+  Record<string, unknown>,
+  never
+> = styled(motion.h1)`
+  font-family: 'Oswald';
+  font-size: ${props => (props.title ? '1.9rem' : '1.1rem')};
+  color: ${props => (props.color ? '#FFFF00' : '#FFFF')};
+  text-align: center;
+`
+
+export const AboutSkills = styled(motion.div)`
+  display: flex;
+  position: absolute;
+  top: 305px;
+  width: 65em;
+  height: 24em;
+  top: 290px;
+  left: -40px;
+  justify-content: center;
+  align-items: center;
+  background: #0d0d0d;
+  clip-path: polygon(17% 45%, 83% 45%, 96.5% 80%, 3.5% 80%);
+`
