@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
   }
 
   const about = {
-    open: { opacity: 1, width: '75%' },
+    open: { opacity: 1, width: '95%' },
     closed: { opacity: 0 }
   }
 

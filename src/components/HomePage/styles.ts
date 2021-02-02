@@ -14,7 +14,7 @@ export const Container = styled.div`
 `
 export const PyramidMenu = styled(motion.div)`
   display: flex;
-  width: 75%;
+  width: 95%;
   height: 75%;
   position: absolute;
   top: 55%;
@@ -37,7 +37,7 @@ export const PyramidMenu = styled(motion.div)`
   transform: translate(-50%, -50%);
 
   @media (max-width: 600px) {
-    width: 95%;
+    width: 100%;
     height: 75%;
   }
 `
@@ -119,7 +119,7 @@ export const PyramidContent = styled(motion.div)`
   z-index: -1;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   @media (max-width: 600px) {
-    height: 75%;
+    height: 80%;
   }
 `
 export const AboutImg = styled(motion.img)`
@@ -166,8 +166,8 @@ export const Title = styled(motion.h1)`
     font-size: 2.8rem;
   }
   @media (max-width: 600px) {
-    font-size: 1.3rem;
-    top: 42%;
+    font-size: 1.5rem;
+    top: 40%;
   }
 `
 
@@ -195,8 +195,8 @@ export const Description = styled(motion.p)`
   }
 
   @media (max-width: 600px) {
-    font-size: 0.7rem;
-    top: 50%;
+    font-size: 0.9rem;
+    top: 47%;
     width: 220px;
     height: 70px;
   }
