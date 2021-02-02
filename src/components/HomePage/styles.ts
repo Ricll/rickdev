@@ -119,7 +119,8 @@ export const PyramidContent = styled(motion.div)`
   z-index: -1;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   @media (max-width: 600px) {
-    height: 80%;
+    height: 90%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
 `
 export const AboutImg = styled(motion.img)`
@@ -167,7 +168,7 @@ export const Title = styled(motion.h1)`
   }
   @media (max-width: 600px) {
     font-size: 1.5rem;
-    top: 40%;
+    top: 43%;
   }
 `
 
@@ -195,7 +196,7 @@ export const Description = styled(motion.p)`
   }
 
   @media (max-width: 600px) {
-    font-size: 0.9rem;
+    font-size: 1rem;
     top: 47%;
     width: 220px;
     height: 70px;
