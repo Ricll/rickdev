@@ -1,138 +1,82 @@
-import React, { useState } from 'react'
-import { Gallery } from '../Gallery'
+import React, { useRef, useEffect } from 'react'
+
+import { useCycle, useAnimation } from 'framer-motion'
+
 import {
   Container,
-  Image,
-  Triangle,
-  About,
-  AboutText,
-  Project,
-  ProjectText,
-  Contact,
-  ContactText,
-  AboutContent,
-  AboutImageContainer,
-  AboutImage,
-  AboutDescription,
-  AboutDescriptionTextContainer,
-  AboutDescriptionText,
-  AboutSkills,
-  CloseGalleryContainer,
-  CloseGallery,
-  CloseContent
+  PyramidMenu,
+  PyramidAboutButtonContainer,
+  PyramidAboutButton,
+  TopDivisor,
+  MiddleDivisor,
+  PyramidContent,
+  AboutImg,
+  Description,
+  Title
 } from './styles'
 
 const HomePage: React.FC = () => {
-  const [showContent, setShowContent] = useState(true)
-  const [contentTransition, setContentTransition] = useState(true)
-  const [showAbout, setShowAbout] = useState(false)
-  const [displayAbout, setDisplayAbout] = useState(false)
+  const [isOpen, toggleOpen] = useCycle(true, false)
 
-  const contentVariants = {
+  const contentControl = useAnimation()
+
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    if (isOpen) {
+      contentControl.stop()
+    } else {
+      contentControl.start('open')
+    }
+  }, [isOpen, contentControl])
+
+  const menu = {
     open: { opacity: 1 },
-    closed: { width: '0em' }
+    closed: { opacity: 0, width: '0vw' }
   }
 
-  const aboutVariants = {
-    open: { opacity: 1, zIndex: 1 },
-    closed: { opacity: 0, zIndex: -1 }
-  }
-  function handleContent() {
-    const timeAbout = setTimeout(() => {
-      setShowContent(!showContent)
-    }, 5500)
-    setContentTransition(false)
-
-    return () => clearTimeout(timeAbout)
+  const about = {
+    open: { opacity: 1, width: '75%' },
+    closed: { opacity: 0 }
   }
 
-  function handleAbout() {
-    const timeAbout = setTimeout(() => {
-      setShowAbout(!showAbout)
-    }, 5500)
-    setDisplayAbout(true)
-    setContentTransition(!contentTransition)
-
-    return () => clearTimeout(timeAbout)
+  const content = {
+    visible: { marginTop: '0px' },
+    hidden: { marginTop: '100px' }
   }
-  function backContent() {
-    setContentTransition(!contentTransition)
-    setShowAbout(!showAbout)
+
+  function handleMenu() {
+    toggleOpen()
   }
   return (
     <Container>
-      <Image src="/sun.png" />
-      <Triangle>
-        <About
-          animate={contentTransition ? 'open' : 'closed'}
-          variants={contentVariants}
-          transition={{ duration: 5 }}
-          onClick={() => handleAbout()}
-        >
-          <AboutText type="reset">About</AboutText>
-        </About>
-
-        <Project
-          animate={contentTransition ? 'open' : 'closed'}
-          variants={contentVariants}
-          transition={{ duration: 5 }}
-          onClick={() => handleContent()}
-        >
-          <ProjectText>Projects</ProjectText>
-        </Project>
-        <Contact
-          animate={contentTransition ? 'open' : 'closed'}
-          variants={contentVariants}
-          transition={{ duration: 5 }}
-          onClick={() => handleContent()}
-        >
-          <ContactText>Contact</ContactText>
-        </Contact>
-      </Triangle>
-
-      {displayAbout && (
-        <AboutContent
-          animate={showAbout ? 'open' : 'closed'}
-          variants={aboutVariants}
-          transition={{ duration: 1, ease: 'linear' }}
-        >
-          <AboutImageContainer
-            animate={showAbout ? 'open' : 'closed'}
-            variants={aboutVariants}
-            transition={{ duration: 1, ease: 'linear' }}
-          >
-            <AboutImage src="cartoon_profy.png" />
-          </AboutImageContainer>
-
-          <AboutDescription
-            animate={showAbout ? 'open' : 'closed'}
-            variants={aboutVariants}
-            transition={{ duration: 1, ease: 'linear' }}
-          >
-            <AboutDescriptionTextContainer>
-              <AboutDescriptionText title color>
-                Nice to meet you
-              </AboutDescriptionText>
-              <AboutDescriptionText>
-                I&apos;m Junior developer searching for an oportunity. <br></br>
-                I concluded the bootcamp of Rocketseat and I now using this
-                knowledge to build some projects to my portfolio{' '}
-              </AboutDescriptionText>
-            </AboutDescriptionTextContainer>
-          </AboutDescription>
-          <AboutSkills
-            animate={showAbout ? 'open' : 'closed'}
-            variants={aboutVariants}
-            transition={{ duration: 1, ease: 'linear' }}
-          ></AboutSkills>
-          <CloseContent
-            animate={showAbout ? 'open' : 'closed'}
-            variants={aboutVariants}
-            transition={{ duration: 1, ease: 'linear' }}
-            onClick={() => backContent()}
-          />
-        </AboutContent>
-      )}
+      <PyramidMenu
+        animate={isOpen ? 'open' : 'closed'}
+        variants={menu}
+        transition={{ duration: 3 }}
+      >
+        <PyramidAboutButtonContainer>
+          <PyramidAboutButton onClick={() => handleMenu()}>
+            About
+          </PyramidAboutButton>
+        </PyramidAboutButtonContainer>
+      </PyramidMenu>
+      <TopDivisor />
+      <MiddleDivisor />
+      <PyramidContent
+        animate={contentControl}
+        variants={about}
+        transition={{ duration: 3 }}
+        ref={containerRef}
+      >
+        <AboutImg src={'/cartoon_profy.png'} />
+        <Title>Nice to meet you!</Title>
+        <Description>
+          I&apos;m web developer searching for an oportunity. <br></br>I
+          concluded the bootcamp of Rocketseat and I now using this knowledge to
+          build some projects to my portfolio
+        </Description>
+      </PyramidContent>
     </Container>
   )
 }

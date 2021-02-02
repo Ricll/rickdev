@@ -1,371 +1,203 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import styled, { StyledComponent } from 'styled-components'
-import { motion, HTMLMotionProps, ForwardRefComponent } from 'framer-motion'
+import { motion } from 'framer-motion'
+
 export const Container = styled.div`
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-`
-export const Triangle = styled(motion.div)`
-  display: flex;
   box-sizing: border-box;
-  margin-top: 15px;
-  width: 950px;
-  height: 600px;
-  justify-content: center;
-
-  clip-path: polygon(50% 20%, 0% 100%, 100% 100%);
-
-  @media only screen and (width: 768px) {
-    width: 750px;
-    height: 500px;
-
-    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
-  }
-
-  @media only screen and (max-width: 600px) {
-    height: 20em;
-    width: 20em;
-    margin-top: 75px;
-    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
-  }
-`
-export const About = styled(motion.div)`
-  display: flex;
   position: absolute;
-  width: 25em;
-  height: 20em;
-  background-image: url('/bricksjpg');
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
 
+  transform: translate(-50%, -50%);
+`
+export const PyramidMenu = styled(motion.div)`
+  display: flex;
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
   justify-content: center;
   align-items: center;
-  border: none;
+  background: url('noise.png');
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
-  clip-path: polygon(50% 33%, 0% 100%, 100% 100%);
+  animation: animate 0.5s steps(10) infinite;
 
-  @media only screen and (width: 768px) {
-    width: 20em;
-    height: 16em;
-
-    clip-path: polygon(50% 3%, 0% 100%, 100% 100%);
+  @keyframes animate {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
   }
-  @media only screen and (max-width: 600px) {
-    width: 9em;
-    height: 10.5em;
-    clip-path: polygon(51% 3%, 0% 100%, 100% 100%);
-  }
-`
+  transform: translate(-50%, -50%);
 
-export const AboutText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000 3px 2px 4px', color: '#FFFF00' },
-  whileTap: { textShadow: '#000 3px 2px 4px', color: '#FFFF00', scale: 1.2 }
-})`
-  margin-top: 185px;
-  margin-right: 8px;
-  font-size: 3rem;
-  font-family: 'Oswald';
-  font-weight: bold;
-  color: #ffff;
-  text-shadow: #474747 3px 2px 4px;
-  letter-spacing: 0.1rem;
-  padding: 0;
-  border: none;
-  outline: none;
-  background: none;
-  text-transform: uppercase;
-
-  @media only screen and (width: 768px) {
-    font-size: 3rem;
-    margin-top: 130px;
-    margin-right: 5px;
-  }
-
-  @media only screen and (max-width: 600px) {
-    font-size: 22px;
-    margin-top: 80px;
-    margin-right: 2.5px;
+  @media (max-width: 600px) {
+    width: 95%;
+    height: 75%;
   }
 `
 
-export const Project = styled(motion.div)`
-  display: flex;
-  position: absolute;
-  top: 220px;
-  width: 42em;
-  height: 16.5em;
-  justify-content: center;
-  align-items: center;
-  background: url('/bricksjpg');
-  z-index: 2;
-
-  clip-path: polygon(20% 45%, 80% 45%, 100% 96.5%, 0% 96%);
-
-  @media only screen and (width: 768px) {
-    width: 32em;
-    height: 12.5em;
-    top: 183px;
-    clip-path: polygon(17% 45%, 83% 45%, 99.5% 96.5%, 0.5% 96%);
-  }
-
-  @media only screen and (max-width: 600px) {
-    width: 15em;
-    height: 9em;
-    top: 180px;
-
-    clip-path: polygon(20% 45%, 80% 45%, 100% 96.5%, 0.5% 96%);
-  }
-`
-
-export const ProjectText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000 3px 2px 4px', color: '#FFFF00' },
-  whileTap: { textShadow: '#000 3px 2px 4px', color: '#FFFF00', scale: 1.2 }
-})`
-  font-size: 3.1rem;
-  font-family: 'Oswald';
-  font-weight: bold;
-  color: #ffff;
-  padding: 0;
-  border: none;
-  outline: none;
-  background: none;
-  letter-spacing: 0.15rem;
-  text-shadow: #474747 3px 2px 4px;
-  text-transform: uppercase;
-  margin-top: 105px;
-
-  @media only screen and (width: 768px) {
-    font-size: 3rem;
-    margin-top: 75px;
-  }
-  @media only screen and (max-width: 600px) {
-    font-size: 22px;
-    margin-top: 60px;
-  }
-`
-export const Contact = styled(motion.div)`
-  display: flex;
-  position: absolute;
-  top: 305px;
-  width: 65em;
-  height: 24em;
-  justify-content: center;
-  align-items: center;
-  background: url('/bricksjpg');
-  clip-path: polygon(17% 45%, 83% 45%, 96.5% 80%, 3.5% 80%);
-
-  @media only screen and (width: 768px) {
-    width: 47em;
-    height: 17em;
-    top: 253px;
-
-    clip-path: polygon(16% 46%, 84% 46%, 100% 96%, 0% 96%);
-  }
-  @media only screen and (max-width: 600px) {
-    width: 20em;
-    height: 15em;
-    top: 210px;
-    clip-path: polygon(13% 46%, 87% 46%, 110% 96%, -10% 96%);
-  }
-`
-export const ContactText = styled(motion.button).attrs({
-  whileHover: { textShadow: '#000 3px 2px 4px', color: '#FFFF00' },
-  whileTap: { textShadow: '#000 3px 2px 4px', color: '#FFFF00', scale: 1.2 }
-})`
-  font-size: 48px;
-  font-family: 'Oswald';
-  font-weight: bold;
-  color: #ffff;
-  padding: 0;
-  border: none;
-  outline: none;
-  background: none;
-  margin-top: 105px;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  text-shadow: #474747 3px 2px 4px;
-  @media only screen and (width: 768px) {
-    font-size: 20px;
-    margin-top: 55px;
-  }
-
-  @media only screen and (width: 768px) {
-    font-size: 3rem;
-    margin-top: 105px;
-  }
-  @media only screen and (max-width: 600px) {
-    font-size: 22px;
-    margin-top: 60px;
-  }
-`
-export const CloseGalleryContainer = styled(motion.div)`
-  display: flex;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  margin-top: 500px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border: none;
-
-  z-index: 2;
-`
-export const CloseGallery = styled(motion.button)`
-  background: white;
-  border-radius: 30px;
-  border: 1px solid #fff;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  padding: 0;
-  outline: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  z-index: 2;
-  left: 493px;
-`
-export const Image = styled(motion.img).attrs({
-  animate: { rotate: 360 },
-  transition: { duration: 20, loop: Infinity, ease: 'linear' }
-})`
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  top: 10px;
-  border-radius: 50%;
-  @media only screen and (width: 768px) {
-    width: 200px;
-    height: 200px;
-  }
-
-  @media only screen and (max-width: 600px) {
-    top: 45px;
-    width: 180px;
-    height: 180px;
-  }
-`
-
-export const CloseContent = styled(motion.button)`
+export const PyramidAboutButtonContainer = styled(motion.div)`
   display: flex;
   position: relative;
-
-  background: white;
-  border-radius: 30px;
-  border: 1px solid #fff;
-  width: 40px;
-  height: 40px;
   justify-content: center;
   align-items: center;
-  user-select: none;
-  padding: 0;
+  width: 200px;
+  height: 100px;
+  top: -20%;
+  background: none;
+`
+
+export const PyramidAboutButton = styled(motion.button).attrs({
+  whileHover: {
+    textShadow: '#000 3px 2px 4px',
+    color: '#FFFF00'
+  },
+  whileTap: {
+    textShadow: '#000 3px 2px 4px',
+    color: '#FFFF00'
+  }
+})`
+  font-size: 52px;
+
+  padding: 0px;
+  border: none;
   outline: none;
-  cursor: pointer;
+  background: none;
+  text-transform: uppercase;
+  font-family: 'Oswald';
   font-weight: bold;
-  font-size: 18px;
-  left: 200px;
-  top: -150px;
-  z-index: 2;
-`
-export const AboutContent = styled(motion.div)`
-  display: column;
-  position: absolute;
-  box-sizing: border-box;
-  margin-top: 15px;
-  width: 950px;
-  height: 600px;
-  justify-content: center;
-  align-items: center;
+  color: white;
 
-  clip-path: polygon(50% 20%, 0% 100%, 100% 100%);
+  text-shadow: #474747 3px 2px 4px;
+  letter-spacing: 0.1rem;
 
-  @media only screen and (width: 768px) {
-    width: 750px;
-    height: 500px;
-
-    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
-  }
-
-  @media only screen and (max-width: 600px) {
-    height: 20em;
-    width: 20em;
-    margin-top: 75px;
-    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
+  @media (max-width: 600px) {
+    font-size: 22px;
   }
 `
 
-export const AboutImageContainer = styled(motion.div)`
+export const TopDivisor = styled(motion.span)`
   display: flex;
-  position: relative;
-  width: 25em;
-  height: 20em;
-  left: 275px;
-  top: 0px;
+  position: fixed;
+  width: 42%;
+  height: 0.2%;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  background-color: #000;
+`
+export const MiddleDivisor = styled(motion.span)`
+  display: flex;
+  position: fixed;
+  top: 73%;
+  left: 50%;
+  width: 60%;
+  height: 0.3%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+`
+
+export const PyramidContent = styled(motion.div)`
+  display: block;
+
+  width: 0%;
+  height: 75%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
   justify-content: center;
   align-items: center;
-
+  transform: translate(-50%, -50%);
   background: #0d0d0d;
-
-  clip-path: polygon(50% 33%, 0% 100%, 100% 100%);
+  z-index: -1;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  @media (max-width: 600px) {
+    height: 75%;
+  }
 `
-export const AboutImage = styled(motion.img)`
-  display: flex;
+export const AboutImg = styled(motion.img)`
   position: relative;
-  width: 140px;
-  height: 140px;
-  left: 0px;
-  top: 75px;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 165px;
   background: #000;
   border-radius: 50%;
   object-fit: cover;
+
+  @media (width: 768px) {
+    top: 25%;
+    width: 100px;
+    height: 115px;
+  }
+
+  @media (max-width: 600px) {
+    top: 32%;
+    width: 70px;
+    height: 85px;
+  }
 `
-export const AboutDescription = styled(motion.div)`
-  display: flex;
+
+export const Title = styled(motion.h1)`
   position: relative;
-  width: 42em;
-  height: 16.5em;
-  justify-content: center;
-  align-items: center;
-  left: 140px;
-  top: -115px;
-  background: #0d0d0d;
-
-  clip-path: polygon(20% 45%, 80% 45%, 100% 96.5%, 0% 96%);
-`
-export const AboutDescriptionTextContainer = styled.div`
-  display: column;
-  width: 25em;
-  height: 8em;
-  margin-top: 100px;
-  justify-content: center;
-  align-items: center;
-`
-export const AboutDescriptionText: StyledComponent<
-  ForwardRefComponent<HTMLHeadingElement, HTMLMotionProps<'h1'>>,
-  any,
-  Record<string, unknown>,
-  never
-> = styled(motion.h1)`
-  font-family: 'Oswald';
-  font-size: ${props => (props.title ? '1.9rem' : '1.1rem')};
-  color: ${props => (props.color ? '#FFFF00' : '#FFFF')};
+  width: 340px;
+  height: 60px;
   text-align: center;
+  top: 22%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', serif;
+  font-size: 3rem;
+  color: #ffff00;
+  background: none;
+  transform: translate(-50%, -50%);
+
+  @media (width: 768px) {
+    top: 30%;
+    font-size: 2.8rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+    top: 42%;
+  }
 `
 
-export const AboutSkills = styled(motion.div)`
-  display: flex;
-  position: absolute;
-  top: 305px;
-  width: 65em;
-  height: 24em;
-  top: 290px;
-  left: -40px;
-  justify-content: center;
-  align-items: center;
-  background: #0d0d0d;
-  clip-path: polygon(17% 45%, 83% 45%, 96.5% 80%, 3.5% 80%);
+export const Description = styled(motion.p)`
+  position: relative;
+  width: 520px;
+  height: 120px;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  font-family: 'Oswald', serif;
+  color: #ffff;
+
+  background: none;
+  transform: translate(-50%, -50%);
+
+  @media (width: 768px) {
+    top: 45%;
+    font-size: 1rem;
+    width: 480px;
+    height: 80px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.7rem;
+    top: 50%;
+    width: 220px;
+    height: 70px;
+  }
 `
