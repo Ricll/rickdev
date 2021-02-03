@@ -23,6 +23,7 @@ export const PyramidMenu = styled(motion.div)`
   align-items: center;
   background: url('noise.png');
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  filter: brightness(130%);
 
   animation: animate 0.5s steps(10) infinite;
 
@@ -38,7 +39,8 @@ export const PyramidMenu = styled(motion.div)`
 
   @media (max-width: 600px) {
     width: 100%;
-    height: 75%;
+    height: 90%;
+    clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
   }
 `
 
@@ -51,6 +53,10 @@ export const PyramidAboutButtonContainer = styled(motion.div)`
   height: 100px;
   top: -20%;
   background: none;
+
+  @media (max-width: 600px) {
+    top: -15%;
+  }
 `
 
 export const PyramidAboutButton = styled(motion.button).attrs({
@@ -85,23 +91,31 @@ export const PyramidAboutButton = styled(motion.button).attrs({
 export const TopDivisor = styled(motion.span)`
   display: flex;
   position: fixed;
-  width: 42%;
+  width: 45%;
   height: 0.2%;
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #000;
+
   background-color: #000;
+
+  @media (max-width: 600px) {
+    width: 42%;
+  }
 `
 export const MiddleDivisor = styled(motion.span)`
   display: flex;
   position: fixed;
   top: 73%;
   left: 50%;
-  width: 60%;
+  width: 70%;
   height: 0.3%;
   transform: translate(-50%, -50%);
   background-color: #000;
+
+  @media (max-width: 600px) {
+    width: 66%;
+  }
 `
 
 export const PyramidContent = styled(motion.div)`
@@ -118,9 +132,10 @@ export const PyramidContent = styled(motion.div)`
   background: #0d0d0d;
   z-index: -1;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  filter: brightness(130%);
   @media (max-width: 600px) {
     height: 90%;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
   }
 `
 export const AboutImg = styled(motion.img)`
