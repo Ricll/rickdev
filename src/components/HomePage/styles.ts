@@ -23,7 +23,7 @@ export const PyramidMenu = styled(motion.div)`
   align-items: center;
   background: url('noise.png');
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  filter: brightness(130%);
+  filter: brightness(200%);
 
   animation: animate 0.5s steps(10) infinite;
 
@@ -132,7 +132,7 @@ export const PyramidContent = styled(motion.div)`
   background: #0d0d0d;
   z-index: -1;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  filter: brightness(130%);
+  filter: brightness(150%);
   @media (max-width: 600px) {
     height: 90%;
     clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
@@ -171,7 +171,7 @@ export const Title = styled(motion.h1)`
   left: 50%;
   margin: 0;
   padding: 0;
-  font-family: 'Oswald', serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 3rem;
   color: #ffff00;
   background: none;
@@ -182,7 +182,7 @@ export const Title = styled(motion.h1)`
     font-size: 2.8rem;
   }
   @media (max-width: 600px) {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     top: 43%;
   }
 `
@@ -213,7 +213,7 @@ export const Description = styled(motion.p)`
   @media (max-width: 600px) {
     font-size: 1rem;
     top: 47%;
-    width: 220px;
+    width: 230px;
     height: 70px;
   }
 `

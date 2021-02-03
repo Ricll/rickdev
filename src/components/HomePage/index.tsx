@@ -42,7 +42,7 @@ const HomePage: React.FC = () => {
 
   const content = {
     visible: { marginTop: '0px' },
-    hidden: { marginTop: '100px' }
+    hidden: { marginTop: '150px' }
   }
 
   function handleMenu() {
@@ -53,7 +53,7 @@ const HomePage: React.FC = () => {
       <PyramidMenu
         animate={isOpen ? 'open' : 'closed'}
         variants={menu}
-        transition={{ duration: 3 }}
+        transition={{ duration: 3, ease: 'linear' }}
       >
         <PyramidAboutButtonContainer>
           <PyramidAboutButton onClick={() => handleMenu()}>
@@ -66,10 +66,17 @@ const HomePage: React.FC = () => {
       <PyramidContent
         animate={contentControl}
         variants={about}
-        transition={{ duration: 3 }}
+        transition={{ duration: 3, ease: 'linear' }}
         ref={containerRef}
       >
-        <AboutImg src={'/cartoon_profy.png'} />
+        <AboutImg
+          initial="hidden"
+          animate="visible"
+          variants={content}
+          transition={{ duration: 4, ease: 'linear' }}
+          ref={containerRef}
+          src={'/cartoon_profy.png'}
+        />
         <Title>Nice to meet you!</Title>
         <Description>
           I&apos;m web developer searching for an oportunity. <br></br>I
