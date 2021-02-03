@@ -35,7 +35,7 @@ export const PyramidMenu = styled(motion.div)`
   left: 50%;
   justify-content: center;
   align-items: center;
-  background: #0d0d0d;
+  background: #34495e;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   transform: translate(-50%, -50%);
   @media (max-width: 600px) {
@@ -130,7 +130,7 @@ export const PyramidContent = styled(motion.div)`
   justify-content: center;
   align-items: center;
   transform: translate(-50%, -50%);
-  background: #0d0d0d;
+  background: #34495e;
   z-index: -1;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
