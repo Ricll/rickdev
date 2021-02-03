@@ -32,11 +32,11 @@ const HomePage: React.FC = () => {
 
   const menu = {
     open: { opacity: 1 },
-    closed: { opacity: 0, width: '0vw' }
+    closed: { opacity: 0, width: '92vw' }
   }
 
   const about = {
-    open: { opacity: 1, width: '95%' },
+    open: { opacity: 1, width: '92vw' },
     closed: { opacity: 0 }
   }
 

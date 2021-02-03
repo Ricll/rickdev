@@ -10,7 +10,8 @@ export const Container = styled.div`
   width: 95%;
   height: 95%;
 
-  background: url('noise.png');
+  background: #0d0d0d url('noise.png');
+  opacity: 0.9;
 
   animation: animate 0.5s steps(10) infinite;
 
@@ -23,11 +24,12 @@ export const Container = styled.div`
     }
   }
   transform: translate(-50%, -50%);
+  filter: brightness(150%);
 `
 export const PyramidMenu = styled(motion.div)`
   display: flex;
-  width: 95%;
-  height: 75%;
+  width: 92vw;
+  height: 80vh;
   position: absolute;
   top: 55%;
   left: 50%;
@@ -37,8 +39,8 @@ export const PyramidMenu = styled(motion.div)`
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   transform: translate(-50%, -50%);
   @media (max-width: 600px) {
-    width: 100%;
-    height: 90%;
+    width: 92vw;
+    height: 80vh;
     clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
   }
 `
@@ -120,8 +122,8 @@ export const MiddleDivisor = styled(motion.span)`
 export const PyramidContent = styled(motion.div)`
   display: block;
 
-  width: 0%;
-  height: 75%;
+  width: 0vw;
+  height: 80vh;
   position: absolute;
   top: 55%;
   left: 50%;
@@ -133,7 +135,7 @@ export const PyramidContent = styled(motion.div)`
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
   @media (max-width: 600px) {
-    height: 90%;
+    height: 80vh;
     clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
   }
 `
