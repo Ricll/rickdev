@@ -10,20 +10,7 @@ export const Container = styled.div`
   width: 95%;
   height: 95%;
 
-  transform: translate(-50%, -50%);
-`
-export const PyramidMenu = styled(motion.div)`
-  display: flex;
-  width: 95%;
-  height: 75%;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  justify-content: center;
-  align-items: center;
   background: url('noise.png');
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  filter: brightness(200%) contrast(300%);
 
   animation: animate 0.5s steps(10) infinite;
 
@@ -36,7 +23,19 @@ export const PyramidMenu = styled(motion.div)`
     }
   }
   transform: translate(-50%, -50%);
-
+`
+export const PyramidMenu = styled(motion.div)`
+  display: flex;
+  width: 95%;
+  height: 75%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  justify-content: center;
+  align-items: center;
+  background: #0d0d0d;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translate(-50%, -50%);
   @media (max-width: 600px) {
     width: 100%;
     height: 90%;
@@ -132,7 +131,7 @@ export const PyramidContent = styled(motion.div)`
   background: #0d0d0d;
   z-index: -1;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  filter: brightness(200%) contrast(300%);
+
   @media (max-width: 600px) {
     height: 90%;
     clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
