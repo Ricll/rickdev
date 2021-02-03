@@ -24,7 +24,6 @@ export const Container = styled.div`
     }
   }
   transform: translate(-50%, -50%);
-  filter: brightness(150%);
 `
 export const PyramidMenu = styled(motion.div)`
   display: flex;
@@ -35,7 +34,7 @@ export const PyramidMenu = styled(motion.div)`
   left: 50%;
   justify-content: center;
   align-items: center;
-  background: #34495e;
+  background: #283747;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   transform: translate(-50%, -50%);
   @media (max-width: 600px) {
