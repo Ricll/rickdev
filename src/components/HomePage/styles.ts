@@ -157,8 +157,8 @@ export const AboutImg = styled(motion.img)`
 
   @media (max-width: 600px) {
     top: 32%;
-    width: 70px;
-    height: 85px;
+    width: 75px;
+    height: 90px;
   }
 `
 
