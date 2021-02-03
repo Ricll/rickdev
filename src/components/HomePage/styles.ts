@@ -23,7 +23,7 @@ export const PyramidMenu = styled(motion.div)`
   align-items: center;
   background: url('noise.png');
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  filter: brightness(200%);
+  filter: brightness(200%) contrast(300%);
 
   animation: animate 0.5s steps(10) infinite;
 
@@ -132,7 +132,7 @@ export const PyramidContent = styled(motion.div)`
   background: #0d0d0d;
   z-index: -1;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  filter: brightness(150%);
+  filter: brightness(200%) contrast(300%);
   @media (max-width: 600px) {
     height: 90%;
     clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
@@ -211,7 +211,7 @@ export const Description = styled(motion.p)`
   }
 
   @media (max-width: 600px) {
-    font-size: 1rem;
+    font-size: 1.2rem;
     top: 47%;
     width: 230px;
     height: 70px;
