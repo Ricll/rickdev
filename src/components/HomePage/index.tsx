@@ -1,89 +1,76 @@
-import React, { useRef, useEffect } from 'react'
-
-import { useCycle, useAnimation } from 'framer-motion'
-
+import React from 'react'
+import {
+  triangleAvariant,
+  triangleBvariant,
+  triangleCvariant,
+  triangleDvariant,
+  triangleEvariant,
+  triangleFvariant
+} from '../variants'
 import {
   Container,
-  PyramidMenu,
-  PyramidAboutButtonContainer,
-  PyramidAboutButton,
-  TopDivisor,
-  MiddleDivisor,
-  PyramidContent,
-  AboutImg,
-  Description,
-  Title
+  DescriptionContainer,
+  DescriptionTextContainer,
+  DescriptionTitle,
+  DescriptionText,
+  ImageContainer,
+  TriangleA,
+  TriangleB,
+  TriangleC,
+  TriangleD,
+  TriangleE,
+  TriangleF,
+  UserAvatar
 } from './styles'
 
 const HomePage: React.FC = () => {
-  const [isOpen, toggleOpen] = useCycle(true, false)
-
-  const contentControl = useAnimation()
-
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    if (isOpen) {
-      contentControl.stop()
-    } else {
-      contentControl.start('open')
-    }
-  }, [isOpen, contentControl])
-
-  const menu = {
-    open: { opacity: 1 },
-    closed: { opacity: 0, width: '92vw' }
-  }
-
-  const about = {
-    open: { opacity: 1, width: '92vw' },
-    closed: { opacity: 0 }
-  }
-
-  const content = {
-    visible: { marginTop: '0px' },
-    hidden: { marginTop: '150px' }
-  }
-
-  function handleMenu() {
-    toggleOpen()
-  }
   return (
     <Container>
-      <PyramidMenu
-        animate={isOpen ? 'open' : 'closed'}
-        variants={menu}
-        transition={{ duration: 3, ease: 'linear' }}
-      >
-        <PyramidAboutButtonContainer>
-          <PyramidAboutButton onClick={() => handleMenu()}>
-            About
-          </PyramidAboutButton>
-        </PyramidAboutButtonContainer>
-      </PyramidMenu>
-      <TopDivisor />
-      <MiddleDivisor />
-      <PyramidContent
-        animate={contentControl}
-        variants={about}
-        transition={{ duration: 3, ease: 'linear' }}
-        ref={containerRef}
-      >
-        <AboutImg
+      <DescriptionContainer>
+        <DescriptionTextContainer>
+          <DescriptionTitle>
+            Hello, I&apos;m Ricardo!<br></br>
+          </DescriptionTitle>
+          <DescriptionText>
+            A junior web developer who keep learning, continue challenging
+            himself, and do interesting things that matter.
+          </DescriptionText>
+        </DescriptionTextContainer>
+      </DescriptionContainer>
+      <ImageContainer>
+        <TriangleA
           initial="hidden"
-          animate="visible"
-          variants={content}
-          transition={{ duration: 4, ease: 'linear' }}
-          ref={containerRef}
-          src={'/cartoon_profy.png'}
+          animate="start"
+          variants={triangleAvariant}
         />
-        <Title>Nice to meet you!</Title>
-        <Description>
-          I&apos;m web developer searching for an oportunity. <br></br>I
-          concluded the bootcamp of Rocketseat and I now using this knowledge to
-          build some projects to my portfolio
-        </Description>
-      </PyramidContent>
+        <TriangleB
+          initial="hidden"
+          animate="start"
+          variants={triangleBvariant}
+        />
+        <TriangleC
+          initial="hidden"
+          animate="start"
+          variants={triangleCvariant}
+        />
+
+        <TriangleD
+          initial="hidden"
+          animate="start"
+          variants={triangleDvariant}
+        />
+        <TriangleE
+          initial="hidden"
+          animate="start"
+          variants={triangleEvariant}
+        />
+        <TriangleF
+          initial="hidden"
+          animate="start"
+          variants={triangleFvariant}
+        />
+        <UserAvatar src={'/cartoon_profy.png'} />
+      </ImageContainer>
     </Container>
   )
 }
