@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
   return (
     <Container>
       <DescriptionContainer>
-        <DescriptionTextContainer>
+        <DescriptionTextContainer data-descr="h m t">
           <DescriptionTitle>
             Hello, I&apos;m Ricardo!<br></br>
           </DescriptionTitle>

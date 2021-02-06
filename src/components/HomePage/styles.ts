@@ -26,7 +26,7 @@ export const DescriptionContainer = styled(motion.div)`
 export const DescriptionTextContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 95em;
   height: 550px;
 
   @media screen and (max-width: 600px) {
@@ -35,22 +35,32 @@ export const DescriptionTextContainer = styled(motion.div)`
 `
 export const DescriptionTitle = styled(motion.h1)`
   font-family: Oswald, Helvetica, sans-serif;
-  font-size: calc(58px + (68 - 58) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(58px + (80 - 58) * ((100vw - 300px) / (1600 - 300)));
   text-align: center;
   line-height: 1.3em;
   padding: 0px;
-  color: #ffff;
-
-  background: none;
+  color: orange;
 `
 export const DescriptionText = styled(motion.p)`
+  position: relative;
   font-family: Oswald, Helvetica, sans-serif;
-  font-size: calc(54px + (64 - 54) * ((100vw - 300px) / (1600 - 300)));
-  color: #2f4f4f;
+  font-size: calc(48px + (62 - 48) * ((100vw - 300px) / (1600 - 300)));
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    green,
+    blue,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
   text-align: center;
-  line-height: 1.3em;
-
-  background: none;
+  line-height: 1.5em;
 
   @media screen and (max-width: 600px) {
     line-height: 1.6em;
@@ -172,8 +182,9 @@ export const UserAvatar = styled(motion.img)`
   position: absolute;
   top: 45%;
   left: 50%;
+
   transform: translate(-50%, -50%);
-  width: 450px;
+  width: 520px;
   height: 605px;
   filter: brightness(85%);
   object-fit: cover;
