@@ -37,14 +37,15 @@ export const DescriptionTitle = styled(motion.h1)`
   font-family: Oswald, Helvetica, sans-serif;
   font-size: calc(58px + (80 - 58) * ((100vw - 300px) / (1600 - 300)));
   text-align: center;
+  padding: 10px;
   line-height: 1.3em;
-  padding: 0px;
+
   color: orange;
 `
 export const DescriptionText = styled(motion.p)`
   position: relative;
   font-family: Oswald, Helvetica, sans-serif;
-  font-size: calc(48px + (62 - 48) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(56px + (62 - 56) * ((100vw - 300px) / (1600 - 300)));
   background-image: linear-gradient(
     to left,
     violet,
@@ -63,7 +64,7 @@ export const DescriptionText = styled(motion.p)`
   line-height: 1.5em;
 
   @media screen and (max-width: 600px) {
-    line-height: 1.6em;
+    line-height: 1.8em;
   }
 `
 export const ImageContainer = styled.div`
