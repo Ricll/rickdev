@@ -28,7 +28,6 @@ export const DescriptionTextContainer = styled(motion.div)`
   flex-direction: column;
   width: 600px;
   height: 550px;
-  background: none;
 
   @media screen and (max-width: 600px) {
     align-items: center;
@@ -36,22 +35,26 @@ export const DescriptionTextContainer = styled(motion.div)`
 `
 export const DescriptionTitle = styled(motion.h1)`
   font-family: Oswald, Helvetica, sans-serif;
-  font-size: calc(42px + (68 - 48) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(58px + (68 - 58) * ((100vw - 300px) / (1600 - 300)));
   text-align: center;
   line-height: 1.3em;
-  padding: 15px;
+  padding: 0px;
   color: #ffff;
 
   background: none;
 `
 export const DescriptionText = styled(motion.p)`
   font-family: Oswald, Helvetica, sans-serif;
-  font-size: calc(48px + (64 - 48) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(54px + (64 - 54) * ((100vw - 300px) / (1600 - 300)));
   color: #2f4f4f;
   text-align: center;
   line-height: 1.3em;
 
   background: none;
+
+  @media screen and (max-width: 600px) {
+    line-height: 1.6em;
+  }
 `
 export const ImageContainer = styled.div`
   display: flex;
@@ -60,10 +63,12 @@ export const ImageContainer = styled.div`
   width: 680px;
   height: 700px;
   min-width: 500px;
+  max-height: 600px;
   justify-content: center;
-  background: #dcdcdc;
-
+  margin-top: 20px;
+  background: #000;
   @media screen and (max-width: 600px) {
+    margin-top: 20px;
     width: 800px;
   }
 `

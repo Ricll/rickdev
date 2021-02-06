@@ -11,9 +11,6 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
-    font-size: calc(28px + (72 - 28) * ((100vw - 300px) / (1600 - 300)));
-
-
 
      h1, h2, h3, h4, h5, h6, strong {
      font-weight: 500;
