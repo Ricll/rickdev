@@ -1,15 +1,6 @@
 import { motion } from 'framer-motion'
 import styled, { keyframes } from 'styled-components'
 
-export const animStar = keyframes`
- from {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(-2000px);
-    }
-`
-
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -22,7 +13,7 @@ export const Stars = styled.div`
   width: 1px;
   height: 1px;
   background: transparent;
-  animation: ${animStar} 50s linear infinite;
+  animation: animStar 50s linear infinite;
 
   box-shadow: 779px 1331px #fff, 324px 42px #fff, 303px 586px #fff,
     1312px 276px #fff, 451px 625px #fff, 521px 1931px #fff, 1087px 1871px #fff,
@@ -401,13 +392,21 @@ export const Stars = styled.div`
       698px 1036px #fff, 659px 1860px #fff, 388px 1412px #fff, 1212px 458px #fff,
       755px 1468px #fff, 696px 1654px #fff, 1144px 60px #fff;
   }
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
 `
 
 export const Stars2 = styled.div`
   width: 2px;
   height: 2px;
   background: transparent;
-  animation: ${animStar} 100s linear infinite;
+  animation: animStar 100s linear infinite;
   box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
     878px 340px #fff, 569px 1832px #fff, 1422px 1684px #fff, 1946px 1907px #fff,
     121px 979px #fff, 1044px 1069px #fff, 463px 381px #fff, 423px 112px #fff,
@@ -522,13 +521,21 @@ export const Stars2 = styled.div`
       156px 81px #fff, 1915px 502px #fff, 1076px 1846px #fff, 152px 1669px #fff,
       986px 1529px #fff, 1667px 1137px #fff;
   }
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
 `
 
 export const Stars3 = styled.div`
   width: 3px;
   height: 3px;
   background: transparent;
-  animation: ${animStar} 150s linear infinite;
+  animation: animStar 150s linear infinite;
   box-shadow: 387px 1878px #fff, 760px 1564px #fff, 1487px 999px #fff,
     948px 1828px #fff, 1977px 1001px #fff, 1284px 1963px #fff, 656px 284px #fff,
     1268px 1635px #fff, 1820px 598px #fff, 642px 1900px #fff, 296px 57px #fff,
@@ -591,6 +598,14 @@ export const Stars3 = styled.div`
       16px 1650px #fff, 1021px 1075px #fff, 723px 424px #fff, 1175px 41px #fff,
       494px 1957px #fff, 1296px 431px #fff, 175px 1507px #fff, 831px 121px #fff,
       498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;
+  }
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
   }
 `
 export const Menu = styled.div`
