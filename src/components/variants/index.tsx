@@ -1,61 +1,59 @@
-export const triangleAvariant = {
-  hidden: { y: 0, x: 0, opacity: 0.9 },
+export const LogoVariantA = {
+  hidden: { y: 10, x: 0, opacity: 0 },
   start: {
-    opacity: 0,
-    rotate: 360,
-    y: 300,
-    x: 450,
+    opacity: 0.5,
+
+    y: [200, 300],
+    x: [100, 150],
 
     transition: {
-      duration: 7,
+      duration: 3,
       repeat: Infinity,
       ease: 'linear'
     }
   }
 }
 
-export const triangleBvariant = {
-  hidden: { y: 400, x: -120, opacity: 0.9 },
+export const LogoVariantB = {
+  hidden: { y: 30, x: 0, opacity: 0 },
   start: {
-    opacity: 0,
-    rotate: 360,
+    opacity: 0.5,
+
     x: 0,
-    y: 0,
+    y: 30,
 
-    delay: 10,
     transition: {
-      duration: 8,
+      duration: 3,
+      delay: 2,
       repeat: Infinity,
       ease: 'linear'
     }
   }
 }
 
-export const triangleCvariant = {
-  hidden: { y: 0, x: 0, opacity: 0.9 },
+export const LogoVariantC = {
+  hidden: { y: -50, x: 0, opacity: 0 },
   start: {
-    opacity: 0,
-    rotate: 180,
+    opacity: 0.5,
+    rotate: 270,
 
-    y: 400,
-    x: -150,
-
+    y: 700,
+    x: 0,
     transition: {
-      duration: 10,
+      duration: 12,
       repeat: Infinity,
       ease: 'linear'
     }
   }
 }
 
-export const triangleDvariant = {
-  hidden: { y: 550, x: 100, opacity: 0.9 },
+export const LogoVariantD = {
+  hidden: { y: 450, x: -100, opacity: 0 },
   start: {
-    opacity: 0,
+    opacity: 0.5,
     rotate: 360,
 
-    y: 0,
-    x: 0,
+    x: 600,
 
     transition: {
       duration: 12,
