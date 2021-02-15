@@ -614,7 +614,9 @@ export const Menu = styled.div`
   top: 5%;
   left: 0;
   width: 100%;
+  height: 5%;
   justify-content: center;
+  align-items: center;
   background: none;
 
   z-index: 2;
@@ -636,15 +638,13 @@ export const Image = styled(motion.img)`
   width: 55px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0;
-  padding: 0;
+
   background: rgba(0, 226, 255, 1);
   box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
     0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    top: -2px;
     height: 60px;
     width: 50px;
   }
