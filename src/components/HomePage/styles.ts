@@ -635,6 +635,7 @@ export const About = styled(motion.button).attrs({
 export const Image = styled(motion.img)`
   position: relative;
   top: -2px;
+  left: 3px;
   height: 65px;
   width: 55px;
   border-radius: 50%;
@@ -647,7 +648,7 @@ export const Image = styled(motion.img)`
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    top: -5px;
+    top: -2px;
     height: 60px;
     width: 50px;
   }

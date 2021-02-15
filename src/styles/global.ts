@@ -21,7 +21,7 @@ body, input, button{
 
   }
   h1, h2, h3, h4, h5, h6, button, strong {
-    font-size: 1.6rem; // 36px
+    font-size: 1.7rem; // 36px
     @media (min-width: 414px){
 
     font-size: calc(1.5rem + 1.4vw); // fluidly scale
