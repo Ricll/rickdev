@@ -608,48 +608,54 @@ export const Stars3 = styled.div`
     }
   }
 `
+
 export const Menu = styled.div`
   display: flex;
-  position: absolute;
   top: 5%;
-  left: 0;
+  box-sizing: border-box;
+  position: absolute;
   width: 100%;
-  height: 5%;
+  justify-content: center;
+  background: none;
+`
+
+export const AboutContainer = styled.div`
+  display: flex;
+  position: relative;
+  width: 10em;
+  height: 5em;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 2;
+  background: none;
+`
+
+export const ImageContainer = styled.div`
+  display: flex;
+  position: relative;
+  width: 5em;
+  height: 5em;
   justify-content: center;
   align-items: center;
   background: none;
+`
+export const ProjectContainer = styled.div`
+  display: flex;
+  position: relative;
 
+  width: 12em;
+  height: 5em;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
+  background: none;
 `
 export const About = styled.button`
-  color: #a29bfe;
-  text-transform: uppercase;
-  border: none !important;
-  outline: none !important;
-  background: none;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  margin-right: 40px;
-  overflow: hidden;
-  z-index: 2;
-`
-export const Image = styled(motion.img)`
-  height: 65px;
-  width: 55px;
-  border-radius: 50%;
-  object-fit: cover;
-
-  background: rgba(0, 226, 255, 1);
-  box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
-    0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
-    0 0 0 4px rgba(0, 226, 255, 0.1);
-
-  @media screen and (max-width: 600px) {
-    height: 60px;
-    width: 50px;
-  }
-`
-export const Projects = styled.button`
+  display: flex;
+  width: 3.5em;
+  height: 1em;
+  justify-content: center;
+  align-items: center;
   color: #a29bfe;
   text-transform: uppercase;
   border: none;
@@ -657,5 +663,33 @@ export const Projects = styled.button`
   background: none;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  margin-left: 40px;
+`
+export const Image = styled(motion.img)`
+  display: flex;
+
+  height: 65px;
+  width: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(0, 226, 255, 1);
+  box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
+    0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
+    0 0 0 4px rgba(0, 226, 255, 0.1);
+
+  @media screen and (max-width: 600px) {
+    height: 55px;
+    width: 55px;
+  }
+`
+export const Projects = styled.button`
+  display: flex;
+  width: 5em;
+  justify-content: center;
+  color: #a29bfe;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  background: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
 `
