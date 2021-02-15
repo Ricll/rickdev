@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion'
 import styled, { keyframes } from 'styled-components'
 
-const animStar = keyframes`
+export const animStar = keyframes`
  from {
         transform: translateY(0px);
     }
     to {
         transform: translateY(-2000px);
     }
-
 `
 
 export const Container = styled.div`
