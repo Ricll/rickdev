@@ -648,13 +648,19 @@ export const Image = styled(motion.img)`
 
   @media screen and (max-width: 600px) {
     top: -5px;
-    height: 50px;
-    width: 40px;
+    height: 60px;
+    width: 50px;
   }
 `
-export const Projects = styled(motion.h1)`
+export const Projects = styled(motion.button).attrs({
+  whileHover: { color: '#FFFF00' },
+  whileTap: { color: '#FFFF00' }
+})`
   color: #a29bfe;
   text-transform: uppercase;
+  border: none;
+  outline: none;
+  background: none;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   margin-left: 40px;
