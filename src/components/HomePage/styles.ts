@@ -614,28 +614,24 @@ export const Menu = styled.div`
   top: 5%;
   left: 0;
   width: 100%;
-
   justify-content: center;
+  background: none;
 
   z-index: 2;
 `
-export const About = styled(motion.button).attrs({
-  whileHover: { color: '#FFFF00' },
-  whileTap: { color: '#FFFF00' }
-})`
+export const About = styled.button`
   color: #a29bfe;
   text-transform: uppercase;
-  border: none;
-  outline: none;
+  border: none !important;
+  outline: none !important;
   background: none;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   margin-right: 40px;
+  overflow: hidden;
+  z-index: 2;
 `
 export const Image = styled(motion.img)`
-  position: relative;
-  top: -2px;
-  left: 3px;
   height: 65px;
   width: 55px;
   border-radius: 50%;
@@ -643,8 +639,8 @@ export const Image = styled(motion.img)`
   margin: 0;
   padding: 0;
   background: rgba(0, 226, 255, 1);
-  box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 30px rgba(0, 226, 255, 1),
-    0 0 60px rgba(0, 226, 255, 1), 0 0 30px rgba(0, 226, 255, 1),
+  box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
+    0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
@@ -653,10 +649,7 @@ export const Image = styled(motion.img)`
     width: 50px;
   }
 `
-export const Projects = styled(motion.button).attrs({
-  whileHover: { color: '#FFFF00' },
-  whileTap: { color: '#FFFF00' }
-})`
+export const Projects = styled.button`
   color: #a29bfe;
   text-transform: uppercase;
   border: none;

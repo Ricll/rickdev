@@ -15,13 +15,19 @@ body {
   -webkit-font-smoothing: antialiased;
   height: 200vh;
 }
-body, input, button{
-    font-family: 'Oswald', sans-serif;
-    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+body, input {
+
 
   }
-  h1, h2, h3, h4, h5, h6, button, strong {
+
+  button {
+
+  font-family: 'Oswald', sans-serif;
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  }
+  h1, h2, h3, h4, h5, h6, button, strong, a {
     font-size: 1.7rem; // 36px
+    font-family: 'Oswald', sans-serif;
     @media (min-width: 414px){
 
     font-size: calc(1.5rem + 1.4vw); // fluidly scale

@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
       <Stars2 />
       <Stars3 />
       <Menu>
-        <About>About</About>
+        <About onClick={() => console.log('AAAA')}>About</About>
         <Image src={'/cartoon_profy.png'} />
         <Projects>Projects</Projects>
       </Menu>
