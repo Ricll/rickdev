@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
-import HomePage from './HomePage'
-
+import HomePage from '../components/HomePage'
 const Home: React.FC = () => {
   useEffect(() => {
     setTimeout(() => setLoading(false), 6000)
