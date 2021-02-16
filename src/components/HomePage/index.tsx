@@ -5,12 +5,9 @@ import {
   Stars,
   Stars2,
   Stars3,
-  ImageContainer,
   About,
   Image,
   Projects,
-  AboutContainer,
-  ProjectContainer,
   Menu
 } from './styles'
 
