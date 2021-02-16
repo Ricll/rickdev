@@ -21,15 +21,9 @@ const HomePage: React.FC = () => {
       <Stars2 />
       <Stars3 />
       <Menu>
-        <AboutContainer>
-          <About onClick={() => console.log('AAAA')}>About</About>
-        </AboutContainer>
-        <ImageContainer>
-          <Image src={'/cartoon_profy.png'} />
-        </ImageContainer>
-        <ProjectContainer>
-          <Projects>Projects</Projects>
-        </ProjectContainer>
+        <About onClick={() => console.log('AAAA')}>About</About>
+        <Image src={'/cartoon_profy.png'} />
+        <Projects>Projects</Projects>
       </Menu>
     </Container>
   )

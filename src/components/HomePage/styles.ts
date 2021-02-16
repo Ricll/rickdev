@@ -611,51 +611,53 @@ export const Stars3 = styled.div`
 
 export const Menu = styled.div`
   display: flex;
-  top: 5%;
-  box-sizing: border-box;
   position: absolute;
-  width: 100%;
+  left: 50%;
+  top: 10px;
+  text-align: center;
+  transform: translateX(-50%);
+  box-sizing: border-box;
   justify-content: center;
-  background: none;
-`
-
-export const AboutContainer = styled.div`
-  display: flex;
-  position: relative;
-  width: 10em;
-  height: 5em;
-  justify-content: flex-end;
   align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100vw;
+  background: none;
   z-index: 2;
-  background: none;
 `
 
-export const ImageContainer = styled.div`
-  display: flex;
-  position: relative;
-  width: 5em;
-  height: 5em;
-  justify-content: center;
-  align-items: center;
-  background: none;
-`
-export const ProjectContainer = styled.div`
-  display: flex;
-  position: relative;
+// export const AboutContainer = styled.div`
+//   display: flex;
+//   position: absolute;
+//   width: 150px;
+//   height: 85px;
+//   justify-content: flex-end;
+//   align-items: center;
+//   z-index: 2;
+//   background: red;
+// `
 
-  width: 12em;
-  height: 5em;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  background: none;
-`
+// export const ImageContainer = styled.div`
+//   display: flex;
+//   position: absolute;
+//   width: 80px;
+//   height: 85px;
+//   justify-content: center;
+//   align-items: center;
+//   background: none;
+// `
+// export const ProjectContainer = styled.div`
+//   display: flex;
+//   position: absolute;
+//   top: 0;
+//   width: 190px;
+//   height: 85px;
+//   justify-content: center;
+//   background: green;
+// `
 export const About = styled.button`
-  display: flex;
-  width: 3.5em;
-  height: 1em;
-  justify-content: center;
-  align-items: center;
+  flex: 2;
+  margin: 10px;
   color: #a29bfe;
   text-transform: uppercase;
   border: none;
@@ -665,11 +667,12 @@ export const About = styled.button`
   -webkit-text-stroke-width: 1px;
 `
 export const Image = styled(motion.img)`
-  display: flex;
-
+  flex: 1;
+  margin: 10px;
   height: 65px;
   width: 55px;
   border-radius: 50%;
+
   object-fit: cover;
   background: rgba(0, 226, 255, 1);
   box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
@@ -677,19 +680,20 @@ export const Image = styled(motion.img)`
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    height: 55px;
-    width: 55px;
+    height: 70px;
+    width: 60px;
   }
 `
 export const Projects = styled.button`
-  display: flex;
-  width: 5em;
-  justify-content: center;
+  flex: 2;
+  margin: 10px;
   color: #a29bfe;
+
   text-transform: uppercase;
   border: none;
   outline: none;
   background: none;
+  z-index: 2;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
 `
