@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
+  position: absolute;
+  z-index: 1;
   width: 100%;
   min-height: 100vh;
   background: radial-gradient(ellipse at bottom, #000 0%, #090a0f 100%);
@@ -12,6 +14,7 @@ export const Container = styled.div`
 export const Stars = styled.div`
   width: 1px;
   height: 1px;
+  z-index: 1;
   background: transparent;
   animation: startAnim 50s linear infinite;
 
@@ -405,6 +408,7 @@ export const Stars = styled.div`
 export const Stars2 = styled.div`
   width: 2px;
   height: 2px;
+  z-index: 1;
   background: transparent;
   animation: startAnim 100s linear infinite;
   box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
@@ -534,6 +538,7 @@ export const Stars2 = styled.div`
 export const Stars3 = styled.div`
   width: 3px;
   height: 3px;
+  z-index: 1;
   background: transparent;
   animation: startAnim 150s linear infinite;
   box-shadow: 387px 1878px #fff, 760px 1564px #fff, 1487px 999px #fff,
@@ -610,69 +615,71 @@ export const Stars3 = styled.div`
 `
 
 export const Menu = styled.div`
-  display: flex;
+  display: grid;
   position: absolute;
-  left: 50%;
-  top: 10px;
-  text-align: center;
-  transform: translateX(-50%);
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  max-width: 400px;
-  margin: 0 auto;
-  width: 100vw;
-  background: none;
+  grid-template-areas: 'about image project';
+
   z-index: 2;
+  align-items: center;
+  grid-template-columns: 45vw 10vw 45vw;
+  grid-template-rows: 10vh;
+  grid-gap: 10px;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 40vw 20vw 40vw;
+    grid-gap: 0px;
+  }
 `
 
-// export const AboutContainer = styled.div`
-//   display: flex;
-//   position: absolute;
-//   width: 150px;
-//   height: 85px;
-//   justify-content: flex-end;
-//   align-items: center;
-//   z-index: 2;
-//   background: red;
-// `
-
-// export const ImageContainer = styled.div`
-//   display: flex;
-//   position: absolute;
-//   width: 80px;
-//   height: 85px;
-//   justify-content: center;
-//   align-items: center;
-//   background: none;
-// `
-// export const ProjectContainer = styled.div`
-//   display: flex;
-//   position: absolute;
-//   top: 0;
-//   width: 190px;
-//   height: 85px;
-//   justify-content: center;
-//   background: green;
-// `
-export const About = styled.button`
-  flex: 2;
-  margin: 10px;
+export const About = styled(motion.button).attrs({
+  whileHover: { color: '#f1c40f', scale: 1.1 },
+  whileTap: { color: '#f1c40f', scale: 1.1 }
+})`
+  display: grid;
+  grid-area: 'about';
+  justify-content: end;
   color: #a29bfe;
   text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 226, 255, 1);
   border: none;
   outline: none;
   background: none;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-`
-export const Image = styled(motion.img)`
-  flex: 1;
-  margin: 10px;
-  height: 65px;
-  width: 55px;
-  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
 
+  @media screen and (max-width: 600px) {
+  }
+`
+
+export const AboutFake = styled(motion.button).attrs({
+  whileHover: { color: '#f1c40f', scale: 1.1 },
+  whileTap: { color: '#f1c40f', scale: 1.1 }
+})`
+  display: grid;
+  grid-area: 'image';
+  justify-content: center;
+  color: #a29bfe;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 226, 255, 1);
+  border: none;
+  outline: none;
+  background: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-tap-highlight-color: transparent;
+`
+
+export const ImageContainer = styled.div`
+  display: grid;
+  grid-area: 'image';
+  justify-content: center;
+`
+export const Image = styled.img`
+  height: 65px;
+  width: 65px;
+  background: none;
+  border-radius: 50%;
   object-fit: cover;
   background: rgba(0, 226, 255, 1);
   box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
@@ -680,20 +687,33 @@ export const Image = styled(motion.img)`
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    height: 70px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
   }
 `
-export const Projects = styled.button`
-  flex: 2;
-  margin: 10px;
+export const Projects = styled(motion.button).attrs({
+  whileHover: { color: '#f1c40f', scale: 1.1 },
+  whileTap: { color: '#f1c40f', scale: 1.1 }
+})`
   color: #a29bfe;
-
+  display: grid;
+  grid-area: 'project';
+  justify-content: start;
+  text-shadow: 0 0 20px rgba(0, 226, 255, 1);
   text-transform: uppercase;
   border: none;
-  outline: none;
+  outline: none !important;
   background: none;
-  z-index: 2;
+  text-decoration: none;
+
+  box-shadow: none;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  @media screen and (max-width: 600px) {
+  }
 `
