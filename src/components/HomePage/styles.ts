@@ -694,8 +694,8 @@ export const Image = styled.img`
     width: 45px;
   }
   @media (max-width: 320px) {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
   }
 `
 export const Projects = styled(motion.button).attrs({
