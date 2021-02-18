@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
       <Stars2 />
       <Stars3 />
       <Menu>
-        <About>About</About>
+        <About>About Me</About>
         <ImageContainer>
           <Image src={'/cartoon_profy.png'} />
         </ImageContainer>

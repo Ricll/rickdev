@@ -617,17 +617,20 @@ export const Stars3 = styled.div`
 export const Menu = styled.div`
   display: grid;
   position: absolute;
+  top: 30px;
   grid-template-areas: 'about image project';
 
   z-index: 2;
   align-items: center;
   grid-template-columns: 45vw 10vw 45vw;
   grid-template-rows: 10vh;
-  grid-gap: 10px;
+  grid-gap: 0px;
 
   @media screen and (max-width: 600px) {
-    grid-template-columns: 40vw 20vw 40vw;
+    grid-template-columns: 45vw 10vw 45vw;
+    justify-content: center;
     grid-gap: 0px;
+    transform: translate(-1%, -1%);
   }
 `
 
@@ -649,6 +652,7 @@ export const About = styled(motion.button).attrs({
   -webkit-tap-highlight-color: transparent;
 
   @media screen and (max-width: 600px) {
+    justify-content: start;
   }
 `
 
@@ -690,6 +694,10 @@ export const Image = styled.img`
     height: 45px;
     width: 45px;
   }
+  @media (max-width: 320px) {
+    height: 35px;
+    width: 35px;
+  }
 `
 export const Projects = styled(motion.button).attrs({
   whileHover: { color: '#f1c40f', scale: 1.1 },
@@ -715,5 +723,6 @@ export const Projects = styled(motion.button).attrs({
   -moz-appearance: none;
 
   @media screen and (max-width: 600px) {
+    justify-content: end;
   }
 `
