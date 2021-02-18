@@ -630,7 +630,6 @@ export const Menu = styled.div`
     grid-template-columns: 45vw 10vw 45vw;
     justify-content: center;
     grid-gap: 0px;
-    transform: translate(-1%, -1%);
   }
 `
 
