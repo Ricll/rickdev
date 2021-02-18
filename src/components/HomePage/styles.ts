@@ -690,12 +690,12 @@ export const Image = styled.img`
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    height: 45px;
-    width: 45px;
+    height: 55px;
+    width: 55px;
   }
   @media (max-width: 320px) {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
   }
 `
 export const Projects = styled(motion.button).attrs({
