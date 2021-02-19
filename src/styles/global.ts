@@ -20,7 +20,7 @@ body {
     font-size: 16px;
 
 @media screen and (min-width: 320px) {
-   font-size: calc(26px + 6 * ((100vw - 320px) / 680));
+   font-size: calc(24px + 6 * ((100vw - 320px) / 680));
 }
 
 @media screen and (min-width: 1000px) {

@@ -9,7 +9,10 @@ import {
   About,
   Projects,
   Image,
-  ImageContainer
+  ButtonsContainer,
+  TextContainer,
+  Title,
+  SubTitle
 } from './styles'
 
 const HomePage: React.FC = () => {
@@ -19,12 +22,15 @@ const HomePage: React.FC = () => {
       <Stars2 />
       <Stars3 />
       <Menu>
-        <About>About Me</About>
-        <ImageContainer>
-          <Image src={'/cartoon_profy.png'} />
-        </ImageContainer>
-
-        <Projects>Projects</Projects>
+        <TextContainer>
+          <Title>Ricardo Lopes</Title>
+          <SubTitle>Junior Web Developer</SubTitle>
+        </TextContainer>
+        <Image src={'/cartoon_profy.png'} />
+        <ButtonsContainer>
+          <About>About Me</About>
+          <Projects>Projects</Projects>
+        </ButtonsContainer>
       </Menu>
     </Container>
   )

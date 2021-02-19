@@ -615,37 +615,90 @@ export const Stars3 = styled.div`
 `
 
 export const Menu = styled.div`
-  display: grid;
+  display: flex;
   position: absolute;
-  top: 30px;
-  grid-template-areas: 'about image project';
-
+  flex-direction: column;
+  width: 60%;
+  height: 70%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
+  justify-content: center;
   align-items: center;
-  grid-template-columns: 45vw 10vw 45vw;
-  grid-template-rows: 10vh;
-  grid-gap: 0px;
 
   @media screen and (max-width: 600px) {
-    grid-template-columns: 45vw 10vw 45vw;
+    width: 100%;
     justify-content: center;
-    grid-gap: 0px;
   }
 `
+export const TextContainer = styled(motion.div)`
+  display: column;
 
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  letter-spacing: 1px;
+  @media screen and (max-width: 600px) {
+    letter-spacing: 0.5px;
+    height: 180px;
+  }
+`
+export const Title = styled(motion.h1)`
+  color: #a29bfe;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  padding: 5px;
+
+  @media screen and (min-width: 320px) {
+    font-size: calc(46px + 6 * ((100vw - 320px) / 680));
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: calc(58px + 6 * ((100vw - 320px) / 680));
+  }
+`
+export const SubTitle = styled(motion.h1)`
+  color: #a29bfe;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  padding: 5px;
+
+  @media screen and (min-width: 320px) {
+    font-size: calc(36px + 6 * ((100vw - 320px) / 680));
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: calc(45px + 6 * ((100vw - 320px) / 680));
+  }
+`
+export const ButtonsContainer = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 600px) {
+    justify-content: space-around;
+  }
+`
 export const About = styled(motion.button).attrs({
   whileHover: { color: '#f1c40f', scale: 1.1 },
   whileTap: { color: '#f1c40f', scale: 1.1 }
 })`
-  display: grid;
-  grid-area: 'about';
-  justify-content: end;
   color: #a29bfe;
   text-transform: uppercase;
   text-shadow: 0 0 20px rgba(0, 226, 255, 1);
-  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
   outline: none;
   background: none;
+  margin: 12px;
+  padding: 12px;
+
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
@@ -654,33 +707,9 @@ export const About = styled(motion.button).attrs({
     justify-content: start;
   }
 `
-
-export const AboutFake = styled(motion.button).attrs({
-  whileHover: { color: '#f1c40f', scale: 1.1 },
-  whileTap: { color: '#f1c40f', scale: 1.1 }
-})`
-  display: grid;
-  grid-area: 'image';
-  justify-content: center;
-  color: #a29bfe;
-  text-transform: uppercase;
-  text-shadow: 0 0 20px rgba(0, 226, 255, 1);
-  border: none;
-  outline: none;
-  background: none;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-tap-highlight-color: transparent;
-`
-
-export const ImageContainer = styled.div`
-  display: grid;
-  grid-area: 'image';
-  justify-content: center;
-`
 export const Image = styled.img`
-  height: 65px;
-  width: 65px;
+  width: 200px;
+  height: 200px;
   background: none;
   border-radius: 50%;
   object-fit: cover;
@@ -690,12 +719,8 @@ export const Image = styled.img`
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    height: 55px;
-    width: 55px;
-  }
-  @media (max-width: 320px) {
-    height: 35px;
-    width: 35px;
+    width: 120px;
+    height: 120px;
   }
 `
 export const Projects = styled(motion.button).attrs({
@@ -703,23 +728,19 @@ export const Projects = styled(motion.button).attrs({
   whileTap: { color: '#f1c40f', scale: 1.1 }
 })`
   color: #a29bfe;
-  display: grid;
-  grid-area: 'project';
-  justify-content: start;
-  text-shadow: 0 0 20px rgba(0, 226, 255, 1);
   text-transform: uppercase;
-  border: none;
-  outline: none !important;
+  text-shadow: 0 0 20px rgba(0, 226, 255, 1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  outline: none;
   background: none;
-  text-decoration: none;
+  margin: 12px;
+  padding: 12px;
 
-  box-shadow: none;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-
   -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 
   @media screen and (max-width: 600px) {
     justify-content: end;
