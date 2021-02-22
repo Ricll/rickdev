@@ -18,14 +18,6 @@ body {
 
   h1, h2, h3, h4, h5, h6, button, strong, a {
     font-size: 16px;
-
-@media screen and (min-width: 320px) {
-   font-size: calc(24px + 6 * ((100vw - 320px) / 680));
-}
-
-@media screen and (min-width: 1000px) {
-  font-size: 36px;
-}
     cursor: pointer;
     font-weight: 500;
   }

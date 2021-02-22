@@ -1,4 +1,5 @@
 import React from 'react'
+import { imageVariants } from '../variants'
 
 import {
   Container,
@@ -23,10 +24,19 @@ const HomePage: React.FC = () => {
       <Stars3 />
       <Menu>
         <TextContainer>
-          <Title>Ricardo Lopes</Title>
+          <Title>
+            <span>R</span>i<span>c</span>a<span>r</span>d<span>o</span>&nbsp;L
+            <span>o</span>p<span>e</span>s
+          </Title>
+
           <SubTitle>Junior Web Developer</SubTitle>
         </TextContainer>
-        <Image src={'/cartoon_profy.png'} />
+        <Image
+          initial="hidden"
+          animate="visible"
+          variants={imageVariants}
+          src={'/cartoon_profy.png'}
+        />
         <ButtonsContainer>
           <About>About Me</About>
           <Projects>Projects</Projects>

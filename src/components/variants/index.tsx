@@ -1,15 +1,34 @@
-export const LogoVariantA = {
-  hidden: { y: 10, x: 0, opacity: 0 },
-  start: {
-    opacity: 0.5,
-
-    y: [200, 300],
-    x: [100, 150],
-
+export const parentVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
     transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: 'linear'
+      staggerChildren: 1,
+      duration: 1,
+      type: 'ease'
+    }
+  }
+}
+
+export const titleEffectVariant = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 3, type: 'ease-out' },
+    rotate: 360
+  }
+}
+
+export const imageVariants = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      type: 'ease',
+      delay: 3
     }
   }
 }

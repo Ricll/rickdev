@@ -616,13 +616,9 @@ export const Stars3 = styled.div`
 
 export const Menu = styled.div`
   display: flex;
-  position: absolute;
   flex-direction: column;
-  width: 60%;
-  height: 70%;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+
   z-index: 2;
   justify-content: center;
   align-items: center;
@@ -634,60 +630,91 @@ export const Menu = styled.div`
 `
 export const TextContainer = styled(motion.div)`
   display: column;
-
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 250px;
-  text-align: center;
+
   letter-spacing: 1px;
+
   @media screen and (max-width: 600px) {
     letter-spacing: 0.5px;
-    height: 180px;
   }
 `
-export const Title = styled(motion.h1)`
+export const Title = styled(motion.div)`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  font-size: 5.8rem;
   color: #a29bfe;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  padding: 5px;
+  padding: 10px;
 
-  @media screen and (min-width: 320px) {
-    font-size: calc(46px + 6 * ((100vw - 320px) / 680));
+  span:nth-child(1n) {
+    color: #a29bfe;
+    -webkit-text-stroke-width: 1px;
+    animation: titleEffect 2s linear;
+    @keyframes titleEffect {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
   }
-
-  @media screen and (min-width: 1000px) {
-    font-size: calc(58px + 6 * ((100vw - 320px) / 680));
+  @media screen and (max-width: 600px) {
+    font-size: 3.4rem;
   }
 `
 export const SubTitle = styled(motion.h1)`
+  font-size: 3.1rem;
   color: #a29bfe;
+  text-align: center;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   padding: 5px;
 
-  @media screen and (min-width: 320px) {
-    font-size: calc(36px + 6 * ((100vw - 320px) / 680));
+  animation: subEffect 2s linear;
+  @keyframes subEffect {
+    from {
+      letter-spacing: 5px;
+      opacity: 0;
+    }
+    to {
+      letter-spacing: 0px;
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.8rem;
   }
   @media screen and (min-width: 1000px) {
-    font-size: calc(45px + 6 * ((100vw - 320px) / 680));
   }
 `
 export const ButtonsContainer = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
   height: 100px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   box-sizing: border-box;
 
   @media screen and (max-width: 600px) {
     justify-content: space-around;
+    margin-top: 0px;
   }
 `
 export const About = styled(motion.button).attrs({
   whileHover: { color: '#f1c40f', scale: 1.1 },
   whileTap: { color: '#f1c40f', scale: 1.1 }
 })`
+  font-size: 2rem;
   color: #a29bfe;
   text-transform: uppercase;
   text-shadow: 0 0 20px rgba(0, 226, 255, 1);
@@ -703,13 +730,25 @@ export const About = styled(motion.button).attrs({
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
 
+  animation: buttonEffect 3s linear;
+  @keyframes buttonEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     justify-content: start;
+    font-size: 1rem;
   }
 `
-export const Image = styled.img`
+export const Image = styled(motion.img)`
   width: 200px;
   height: 200px;
+  margin: 40px;
   background: none;
   border-radius: 50%;
   object-fit: cover;
@@ -721,12 +760,14 @@ export const Image = styled.img`
   @media screen and (max-width: 600px) {
     width: 120px;
     height: 120px;
+    margin: 30px;
   }
 `
 export const Projects = styled(motion.button).attrs({
   whileHover: { color: '#f1c40f', scale: 1.1 },
   whileTap: { color: '#f1c40f', scale: 1.1 }
 })`
+  font-size: 2rem;
   color: #a29bfe;
   text-transform: uppercase;
   text-shadow: 0 0 20px rgba(0, 226, 255, 1);
@@ -744,5 +785,6 @@ export const Projects = styled(motion.button).attrs({
 
   @media screen and (max-width: 600px) {
     justify-content: end;
+    font-size: 1rem;
   }
 `
