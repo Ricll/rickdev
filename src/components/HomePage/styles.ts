@@ -667,7 +667,7 @@ export const Title = styled(motion.div)`
     }
   }
   @media screen and (max-width: 600px) {
-    font-size: 3.4rem;
+    font-size: 4rem;
   }
 `
 export const SubTitle = styled(motion.h1)`
@@ -691,7 +691,7 @@ export const SubTitle = styled(motion.h1)`
   }
 
   @media screen and (max-width: 600px) {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
   @media screen and (min-width: 1000px) {
   }
@@ -742,7 +742,7 @@ export const About = styled(motion.button).attrs({
 
   @media screen and (max-width: 600px) {
     justify-content: start;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 `
 export const Image = styled(motion.img)`
@@ -758,8 +758,8 @@ export const Image = styled(motion.img)`
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 30px;
   }
 `
@@ -785,6 +785,6 @@ export const Projects = styled(motion.button).attrs({
 
   @media screen and (max-width: 600px) {
     justify-content: end;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 `
