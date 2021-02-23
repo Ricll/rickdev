@@ -626,7 +626,7 @@ export const Menu = styled.div`
   @media screen and (max-width: 600px) {
     width: 100%;
     justify-content: center;
-    margin-top: -50px;
+    margin-top: -80px;
   }
 `
 export const TextContainer = styled(motion.div)`
@@ -656,9 +656,10 @@ export const Title = styled(motion.div)`
     color: #a29bfe;
     -webkit-text-stroke-width: 1px;
     animation: titleEffect 2s linear;
+
     @keyframes titleEffect {
       from {
-        transform: translateY(-50px);
+        transform: translateY(-100px);
         opacity: 0;
       }
       to {
@@ -682,7 +683,7 @@ export const SubTitle = styled(motion.h1)`
   animation: subEffect 2s linear;
   @keyframes subEffect {
     from {
-      letter-spacing: 5px;
+      letter-spacing: 10px;
       opacity: 0;
     }
     to {
@@ -743,7 +744,7 @@ export const About = styled(motion.button).attrs({
 
   @media screen and (max-width: 600px) {
     justify-content: start;
-    font-size: calc(22px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
 `
 export const Image = styled(motion.img)`
@@ -759,8 +760,8 @@ export const Image = styled(motion.img)`
     0 0 0 4px rgba(0, 226, 255, 0.1);
 
   @media screen and (max-width: 600px) {
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
     margin: 30px;
   }
 `
@@ -786,6 +787,6 @@ export const Projects = styled(motion.button).attrs({
 
   @media screen and (max-width: 600px) {
     justify-content: end;
-    font-size: calc(22px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
 `
