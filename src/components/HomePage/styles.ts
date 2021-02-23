@@ -626,7 +626,7 @@ export const Menu = styled.div`
   @media screen and (max-width: 600px) {
     width: 100%;
     justify-content: center;
-    margin-top: -30px;
+    margin-top: -50px;
   }
 `
 export const TextContainer = styled(motion.div)`
@@ -743,7 +743,7 @@ export const About = styled(motion.button).attrs({
 
   @media screen and (max-width: 600px) {
     justify-content: start;
-    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(22px + 6 * ((100vw - 320px) / 680));
   }
 `
 export const Image = styled(motion.img)`
@@ -786,6 +786,6 @@ export const Projects = styled(motion.button).attrs({
 
   @media screen and (max-width: 600px) {
     justify-content: end;
-    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(22px + 6 * ((100vw - 320px) / 680));
   }
 `
