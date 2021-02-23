@@ -672,28 +672,36 @@ export const Title = styled(motion.div)`
     font-size: 4rem;
   }
 `
-export const SubTitle = styled(motion.h1)`
-  font-size: 3.1rem;
+export const SubTitle = styled(motion.div)`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 3.8rem;
   color: #a29bfe;
   text-align: center;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  padding: 5px;
+  padding: 0px;
 
-  animation: subEffect 2s linear;
-  @keyframes subEffect {
-    from {
-      letter-spacing: 10px;
-      opacity: 0;
-    }
-    to {
-      letter-spacing: 0px;
-      opacity: 1;
+  span:nth-child(1n) {
+    color: #a29bfe;
+    -webkit-text-stroke-width: 1px;
+    animation: subEffect 2s linear;
+
+    @keyframes subEffect {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
     }
   }
 
   @media screen and (max-width: 600px) {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
   @media screen and (min-width: 1000px) {
   }

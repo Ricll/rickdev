@@ -29,7 +29,13 @@ const HomePage: React.FC = () => {
             <span>o</span>p<span>e</span>s
           </Title>
 
-          <SubTitle>Junior Web Developer</SubTitle>
+          <SubTitle>
+            <span>W</span>/
+            <span>
+              <span>M</span>&nbsp;D
+            </span>
+            e<span>v</span>e<span>l</span>o<span>p</span>e<span>r</span>
+          </SubTitle>
         </TextContainer>
         <Image
           initial="hidden"
