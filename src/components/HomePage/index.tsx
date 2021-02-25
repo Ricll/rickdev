@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
             />
             <ButtonsContainer>
               <About id="about" onClick={handleClick}>
-                About Me
+                About
               </About>
               <Home id="home" onClick={handleClick}>
                 H
