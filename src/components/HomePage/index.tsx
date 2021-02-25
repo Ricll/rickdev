@@ -64,11 +64,9 @@ const HomePage: React.FC = () => {
             />
             <ButtonsContainer>
               <About id="about" onClick={handleClick}>
-                About
+                About Me
               </About>
-              <Home id="home" onClick={handleClick}>
-                H
-              </Home>
+
               <Projects>Projects</Projects>
             </ButtonsContainer>
           </Content>
@@ -84,13 +82,12 @@ const HomePage: React.FC = () => {
           >
             <Title>Transition</Title>
             <ButtonsContainer>
-              <About id="about" onClick={handleClick}>
-                About Me
-              </About>
               <Home id="home" onClick={handleClick}>
-                H
+                Back Home
               </Home>
-              <Projects>Projects</Projects>
+              <Projects id="home" onClick={handleClick}>
+                Projects
+              </Projects>
             </ButtonsContainer>
           </Content>
         )}

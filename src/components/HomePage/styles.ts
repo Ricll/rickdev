@@ -784,11 +784,16 @@ export const Home = styled(motion.button).attrs({
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
+
+  @media screen and (max-width: 600px) {
+    justify-content: start;
+    font-size: calc(24px + 6 * ((100vw - 320px) / 680));
+  }
 `
 
 export const Projects = styled(motion.button).attrs({
   whileHover: { color: '#f1c40f', scale: 1.1 },
-  whileTap: { color: '#f1c40f', scale: 1.1 }
+  whileTap: { color: '#f1c40f', scale: 1.3 }
 })`
   font-size: 2rem;
   color: #a29bfe;
