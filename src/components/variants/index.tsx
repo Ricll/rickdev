@@ -1,3 +1,26 @@
+import { Variant, Variants, TargetAndTransition } from 'framer-motion'
+
+export const pageVariants: Variants = {
+  initial: {
+    opacity: 0,
+    when: 'afterChildren',
+    duration: 2
+  } as Variant,
+  enter: {
+    scale: 1,
+    opacity: 1,
+    when: 'afterChildren',
+    duration: 2
+  } as Variant,
+  exit: {
+    opacity: 0,
+    transition: {
+      easings: 'easeInOut',
+      when: 'afterChildren',
+      duration: 2
+    } as TargetAndTransition
+  }
+}
 export const parentVariants = {
   hidden: { opacity: 0, x: -100 },
   visible: {

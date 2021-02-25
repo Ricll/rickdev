@@ -614,14 +614,24 @@ export const Stars3 = styled.div`
   }
 `
 
-export const Menu = styled.div`
+export const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 100%;
-
   z-index: 2;
   justify-content: center;
   align-items: center;
+
+  animation: menuEffect 2s linear;
+
+  @keyframes menuEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   @media screen and (max-width: 600px) {
     width: 100%;
@@ -722,7 +732,7 @@ export const ButtonsContainer = styled.div`
 `
 export const About = styled(motion.button).attrs({
   whileHover: { color: '#f1c40f', scale: 1.1 },
-  whileTap: { color: '#f1c40f', scale: 1.1 }
+  whileTap: { color: '#f1c40f', scale: 1.3 }
 })`
   font-size: 2rem;
   color: #a29bfe;
@@ -755,24 +765,27 @@ export const About = styled(motion.button).attrs({
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
 `
-export const Image = styled(motion.img)`
-  width: 200px;
-  height: 200px;
-  margin: 40px;
+export const Home = styled(motion.button).attrs({
+  whileHover: { color: '#f1c40f', scale: 1.1 },
+  whileTap: { color: '#f1c40f', scale: 1.3 }
+})`
+  font-size: 2rem;
+  color: #a29bfe;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 226, 255, 1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  outline: none;
   background: none;
-  border-radius: 50%;
-  object-fit: cover;
-  background: rgba(0, 226, 255, 1);
-  box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
-    0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
-    0 0 0 4px rgba(0, 226, 255, 0.1);
+  margin: 12px;
+  padding: 12px;
 
-  @media screen and (max-width: 600px) {
-    width: 190px;
-    height: 190px;
-    margin: 30px;
-  }
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-tap-highlight-color: transparent;
 `
+
 export const Projects = styled(motion.button).attrs({
   whileHover: { color: '#f1c40f', scale: 1.1 },
   whileTap: { color: '#f1c40f', scale: 1.1 }
@@ -796,5 +809,23 @@ export const Projects = styled(motion.button).attrs({
   @media screen and (max-width: 600px) {
     justify-content: end;
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
+  }
+`
+export const Image = styled(motion.img)`
+  width: 200px;
+  height: 200px;
+  margin: 40px;
+  background: none;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(0, 226, 255, 1);
+  box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
+    0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
+    0 0 0 4px rgba(0, 226, 255, 0.1);
+
+  @media screen and (max-width: 600px) {
+    width: 190px;
+    height: 190px;
+    margin: 30px;
   }
 `
