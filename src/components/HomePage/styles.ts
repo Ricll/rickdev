@@ -3,6 +3,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: column;
+  position: absolute;
+  z-index: 2;
+
   width: 100%;
   min-height: 100vh;
   background: transparent;
@@ -614,9 +617,9 @@ export const Stars3 = styled.div`
 export const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
   width: 100%;
   z-index: 2;
+  margin-top: 50px;
   justify-content: center;
   align-items: center;
   background: transparent;
