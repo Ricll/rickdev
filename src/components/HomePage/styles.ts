@@ -4,8 +4,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   position: absolute;
-  z-index: 1;
-  width: 100%;
+  z-index: 2;
+  width: 100vw;
   min-height: 100vh;
   background: radial-gradient(ellipse at bottom, #000 0%, #090a0f 100%);
   overflow: hidden;
@@ -653,7 +653,7 @@ export const TextContainer = styled(motion.div)`
 `
 export const Title = styled(motion.div)`
   display: flex;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
 
   font-size: 5.8rem;
@@ -684,7 +684,7 @@ export const Title = styled(motion.div)`
 `
 export const SubTitle = styled(motion.div)`
   display: flex;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
   font-size: 3.8rem;
   color: #a29bfe;
@@ -718,7 +718,7 @@ export const SubTitle = styled(motion.div)`
 `
 export const ButtonsContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 100vw;
   margin-top: 15px;
   height: 100px;
   align-items: center;
@@ -726,7 +726,7 @@ export const ButtonsContainer = styled.div`
   box-sizing: border-box;
 
   @media screen and (max-width: 600px) {
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 0px;
   }
 `
@@ -785,6 +785,16 @@ export const Home = styled(motion.button).attrs({
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
 
+  animation: buttonEffect 3s linear;
+  @keyframes buttonEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     justify-content: start;
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
@@ -806,6 +816,16 @@ export const Projects = styled(motion.button).attrs({
   background: none;
   margin: 12px;
   padding: 12px;
+
+  animation: buttonEffect 3s linear;
+  @keyframes buttonEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
