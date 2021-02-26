@@ -632,7 +632,7 @@ export const Content = styled(motion.div)`
   }
 
   @media screen and (max-width: 600px) {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 `
 export const TextContainer = styled(motion.div)`
