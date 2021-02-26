@@ -11,8 +11,9 @@ export default createGlobalStyle`
 body {
    overflow: hidden;
   -webkit-font-smoothing: antialiased;
-  height: 200vh;
+  height: 100vh;
   font-family: 'Oswald', sans-serif;
+  background: #000;
 
 }
 

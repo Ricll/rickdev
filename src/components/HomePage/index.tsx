@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AnimatePresence, useCycle } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { imageVariants, pageVariants } from '../variants'
 
 import {
@@ -29,10 +29,10 @@ const HomePage: React.FC = () => {
   }
   return (
     <Container>
+      <Stars />
+      <Stars2 />
+      <Stars3 />
       <AnimatePresence exitBeforeEnter>
-        <Stars />
-        <Stars2 />
-        <Stars3 />
         {activeElement === 'home' && (
           <Content
             key="home"
@@ -85,9 +85,7 @@ const HomePage: React.FC = () => {
               <Home id="home" onClick={handleClick}>
                 Back Home
               </Home>
-              <Projects id="home" onClick={handleClick}>
-                Projects
-              </Projects>
+              <Projects>Projects</Projects>
             </ButtonsContainer>
           </Content>
         )}

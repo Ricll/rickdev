@@ -2,13 +2,10 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
-  position: absolute;
-  z-index: 2;
-  width: 100vw;
+  display: column;
+  width: 100%;
   min-height: 100vh;
-  background: radial-gradient(ellipse at bottom, #000 0%, #090a0f 100%);
-  overflow: hidden;
+  background: transparent;
 `
 
 export const Stars = styled.div`
@@ -408,7 +405,7 @@ export const Stars = styled.div`
 export const Stars2 = styled.div`
   width: 2px;
   height: 2px;
-  z-index: 1;
+  z-index: -1;
   background: transparent;
   animation: startAnim 100s linear infinite;
   box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
@@ -617,11 +614,12 @@ export const Stars3 = styled.div`
 export const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
   width: 100%;
   z-index: 2;
   justify-content: center;
   align-items: center;
-
+  background: transparent;
   animation: menuEffect 2s linear;
 
   @keyframes menuEffect {
@@ -634,9 +632,7 @@ export const Content = styled(motion.div)`
   }
 
   @media screen and (max-width: 600px) {
-    width: 100%;
-    justify-content: center;
-    margin-top: -80px;
+    margin-top: 80px;
   }
 `
 export const TextContainer = styled(motion.div)`
@@ -644,24 +640,24 @@ export const TextContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   width: 100%;
-
+  background: transparent;
   letter-spacing: 1px;
-
+  z-index: 2;
   @media screen and (max-width: 600px) {
     letter-spacing: 0.5px;
   }
 `
 export const Title = styled(motion.div)`
   display: flex;
-  width: 100vw;
+  width: 100%;
   justify-content: center;
-
+  background: transparent;
   font-size: 5.8rem;
   color: #a29bfe;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   padding: 10px;
-
+  z-index: 2;
   span:nth-child(1n) {
     color: #a29bfe;
     -webkit-text-stroke-width: 1px;
@@ -684,7 +680,8 @@ export const Title = styled(motion.div)`
 `
 export const SubTitle = styled(motion.div)`
   display: flex;
-  width: 100vw;
+  width: 100%;
+  background: transparent;
   justify-content: center;
   font-size: 3.8rem;
   color: #a29bfe;
@@ -692,7 +689,7 @@ export const SubTitle = styled(motion.div)`
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   padding: 0px;
-
+  z-index: 2;
   span:nth-child(1n) {
     color: #a29bfe;
     -webkit-text-stroke-width: 1px;
@@ -723,8 +720,9 @@ export const ButtonsContainer = styled.div`
   height: 100px;
   align-items: center;
   justify-content: center;
+  background: transparent;
   box-sizing: border-box;
-
+  z-index: 2;
   @media screen and (max-width: 600px) {
     justify-content: space-between;
     margin-top: 0px;
@@ -742,10 +740,10 @@ export const About = styled(motion.button).attrs({
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
   outline: none;
-  background: none;
+  background: transparent;
   margin: 12px;
   padding: 12px;
-
+  z-index: 2;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
@@ -780,7 +778,7 @@ export const Home = styled(motion.button).attrs({
   background: none;
   margin: 12px;
   padding: 12px;
-
+  z-index: 2;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
@@ -816,7 +814,7 @@ export const Projects = styled(motion.button).attrs({
   background: none;
   margin: 12px;
   padding: 12px;
-
+  z-index: 2;
   animation: buttonEffect 3s linear;
   @keyframes buttonEffect {
     from {
@@ -847,7 +845,7 @@ export const Image = styled(motion.img)`
   box-shadow: 0 0 20px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
     0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
     0 0 0 4px rgba(0, 226, 255, 0.1);
-
+  z-index: 2;
   @media screen and (max-width: 600px) {
     width: 190px;
     height: 190px;
