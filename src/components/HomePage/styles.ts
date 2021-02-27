@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import styled from 'styled-components'
+import { motion, HTMLMotionProps, ForwardRefComponent } from 'framer-motion'
+import styled, { StyledComponent } from 'styled-components'
 
 export const Container = styled.div`
   display: column;
@@ -619,7 +619,7 @@ export const Content = styled(motion.div)`
   flex-direction: column;
   width: 100%;
   z-index: 2;
-  margin-top: 50px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
   background: transparent;
@@ -635,7 +635,7 @@ export const Content = styled(motion.div)`
   }
 
   @media screen and (max-width: 600px) {
-    margin-top: 60px;
+    margin-top: 0px;
   }
 `
 export const TextContainer = styled(motion.div)`
@@ -677,7 +677,7 @@ export const Title = styled(motion.div)`
       }
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     font-size: 4rem;
   }
 `
@@ -691,7 +691,7 @@ export const SubTitle = styled(motion.div)`
   text-align: center;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  padding: 0px;
+
   z-index: 2;
   span:nth-child(1n) {
     color: #a29bfe;
@@ -710,10 +710,51 @@ export const SubTitle = styled(motion.div)`
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     font-size: 2.8rem;
   }
-  @media screen and (min-width: 1000px) {
+`
+
+export const Text = styled(motion.div)`
+  background: transparent;
+  width: 50%;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: #a29bfe;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+
+  @media screen and (max-width: 800px) {
+    font-size: calc(21px + 6 * ((100vw - 320px) / 680));
+    margin-bottom: 20px;
+    width: 90%;
+  }
+`
+export const TechsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 15px;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+`
+
+export const TechImage: StyledComponent<
+  ForwardRefComponent<HTMLHeadingElement, HTMLMotionProps<'img'>>,
+  any,
+  Record<string, unknown>,
+  never
+> = styled(motion.img)`
+  width: ${props => (props.sizes ? '90px' : '70px')};
+  height: 70px;
+  object-fit: cover;
+
+  @media screen and (max-width: 600px) {
+    width: 50px;
+    height: 50px;
   }
 `
 export const ButtonsContainer = styled.div`
@@ -761,7 +802,7 @@ export const About = styled(motion.button).attrs({
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     justify-content: start;
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
@@ -796,7 +837,7 @@ export const Home = styled(motion.button).attrs({
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     justify-content: start;
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
@@ -832,7 +873,7 @@ export const Projects = styled(motion.button).attrs({
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     justify-content: end;
     font-size: calc(24px + 6 * ((100vw - 320px) / 680));
   }
@@ -849,7 +890,7 @@ export const Image = styled(motion.img)`
     0 0 40px rgba(0, 226, 255, 1), 0 0 10px rgba(0, 226, 255, 1),
     0 0 0 4px rgba(0, 226, 255, 0.1);
   z-index: 2;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     width: 190px;
     height: 190px;
     margin: 30px;

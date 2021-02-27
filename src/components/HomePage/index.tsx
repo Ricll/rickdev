@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { imageVariants, pageVariants } from '../variants'
+import { imageVariants, pageVariants, logoVariant } from '../variants'
 
 import {
   Container,
@@ -15,7 +15,10 @@ import {
   ButtonsContainer,
   TextContainer,
   Title,
-  SubTitle
+  Text,
+  SubTitle,
+  TechsContainer,
+  TechImage
 } from './styles'
 
 const HomePage: React.FC = () => {
@@ -81,6 +84,53 @@ const HomePage: React.FC = () => {
             exit="exit"
           >
             <Title>Transition</Title>
+            <Text>
+              I have more than 10 years of experience in the sales area.
+              <br></br>
+              However, I have been studying programming to get a new opportunity
+              in the market for developing websites and mobile applications.
+              <br></br>
+            </Text>
+            <TechsContainer>
+              <TechImage
+                src={'/html.webp'}
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+              />
+              <TechImage
+                src={'css.webp'}
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+              />
+              <TechImage
+                sizes
+                src={'jscriptlogo.png'}
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+              />
+              <TechImage
+                sizes
+                src={'react_logo.png'}
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+              />
+              <TechImage
+                sizes
+                src={'nodejs2.png'}
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+              />
+            </TechsContainer>
+            <Text>
+              Here you can see some of my projects. I hope you enjoy it. Stay in
+              touch.
+            </Text>
+
             <ButtonsContainer>
               <Home id="home" onClick={handleClick}>
                 Back Home

@@ -1,5 +1,16 @@
 import { Variant, Variants, TargetAndTransition } from 'framer-motion'
-
+export const logoVariant = {
+  hidden: {
+    x: -300,
+    opacity: 0
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    rotate: 360,
+    transition: { duration: 3, type: 'ease' }
+  }
+}
 export const pageVariants: Variants = {
   initial: {
     opacity: 0,
