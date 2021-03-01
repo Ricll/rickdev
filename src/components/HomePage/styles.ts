@@ -750,7 +750,7 @@ export const Text = styled(motion.div)`
   -webkit-text-stroke-width: 1px;
 
   @media screen and (max-width: 800px) {
-    font-size: calc(21px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(22px + 6 * ((100vw - 320px) / 680));
     margin-bottom: 20px;
     width: 90%;
   }
