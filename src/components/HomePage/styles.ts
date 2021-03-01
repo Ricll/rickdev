@@ -799,8 +799,8 @@ export const SocialImage: StyledComponent<
   object-fit: cover;
 
   @media screen and (max-width: 600px) {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 `
 
@@ -943,7 +943,7 @@ export const Projects = styled(motion.button).attrs({
 export const Image = styled(motion.img)`
   width: 200px;
   height: 200px;
-  margin: 30px;
+  margin: 50px;
   background: none;
   border-radius: 50%;
   object-fit: cover;
