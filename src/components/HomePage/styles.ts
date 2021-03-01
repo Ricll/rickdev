@@ -745,6 +745,7 @@ export const Text = styled(motion.div)`
   justify-content: center;
   font-size: 1.9rem;
   color: #a29bfe;
+  letter-spacing: 0.5px;
   text-align: center;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
