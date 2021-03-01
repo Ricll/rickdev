@@ -7,7 +7,8 @@ import {
   Stars,
   Stars2,
   Stars3,
-  Content,
+  HomeContent,
+  AboutContent,
   About,
   Projects,
   Home,
@@ -37,7 +38,7 @@ const HomePage: React.FC = () => {
       <Stars3 />
       <AnimatePresence exitBeforeEnter>
         {activeElement === 'home' && (
-          <Content
+          <HomeContent
             key="home"
             variants={pageVariants}
             initial="exit"
@@ -72,11 +73,11 @@ const HomePage: React.FC = () => {
 
               <Projects>Projects</Projects>
             </ButtonsContainer>
-          </Content>
+          </HomeContent>
         )}
 
         {activeElement === 'about' && (
-          <Content
+          <AboutContent
             key="about"
             variants={pageVariants}
             initial="exit"
@@ -137,7 +138,7 @@ const HomePage: React.FC = () => {
               </Home>
               <Projects>Projects</Projects>
             </ButtonsContainer>
-          </Content>
+          </AboutContent>
         )}
       </AnimatePresence>
     </Container>
