@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { imageVariants, pageVariants, logoVariant } from '../variants'
+import {
+  imageVariants,
+  pageVariants,
+  logoVariant,
+  textVariant
+} from '../variants'
 
 import {
   Container,
@@ -19,7 +24,10 @@ import {
   Text,
   SubTitle,
   TechsContainer,
-  TechImage
+  TechImage,
+  SocialContainer,
+  SocialLink,
+  SocialImage
 } from './styles'
 
 const HomePage: React.FC = () => {
@@ -85,7 +93,12 @@ const HomePage: React.FC = () => {
             exit="exit"
           >
             <Title>Transition</Title>
-            <Text>
+            <Text
+              initial="hidden"
+              animate="visible"
+              variants={textVariant}
+              transition={{ duration: 3, type: 'ease', delay: 2 }}
+            >
               I have more than 10 years of experience in the sales area.
               <br></br>
               However, I have been studying programming to get a new opportunity
@@ -127,11 +140,23 @@ const HomePage: React.FC = () => {
                 variants={logoVariant}
               />
             </TechsContainer>
-            <Text>
+            <Text
+              initial="hidden"
+              animate="visible"
+              variants={textVariant}
+              transition={{ duration: 3, type: 'ease', delay: 3 }}
+            >
               Here you can see some of my projects. I hope you enjoy it. Stay in
               touch.
             </Text>
-
+            <SocialContainer>
+              <SocialLink href="https://github.com/Ricll">
+                <SocialImage src={'git.png'} />
+              </SocialLink>
+              <SocialLink href="https://github.com/Ricll">
+                <SocialImage src={'linkedin.png'} />
+              </SocialLink>
+            </SocialContainer>
             <ButtonsContainer>
               <Home id="home" onClick={handleClick}>
                 Back Home

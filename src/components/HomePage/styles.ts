@@ -642,7 +642,7 @@ export const AboutContent = styled(motion.div)`
   flex-direction: column;
   width: 100%;
   z-index: 2;
-  margin-top: 10px;
+  margin-top: 0px;
   justify-content: center;
   align-items: center;
   background: transparent;
@@ -743,15 +743,16 @@ export const Text = styled(motion.div)`
   background: transparent;
   width: 50%;
   justify-content: center;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   color: #a29bfe;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   text-align: center;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
 
   @media screen and (max-width: 800px) {
     font-size: calc(22px + 6 * ((100vw - 320px) / 680));
+    letter-spacing: 0.5px;
     margin-bottom: 20px;
     width: 90%;
   }
@@ -767,14 +768,47 @@ export const TechsContainer = styled.div`
   }
 `
 
+export const SocialContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 5px;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+`
+
+export const SocialLink = styled(motion.a)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const SocialImage: StyledComponent<
+  ForwardRefComponent<HTMLHeadingElement, HTMLMotionProps<'img'>>,
+  any,
+  Record<string, unknown>,
+  never
+> = styled(motion.img)`
+  width: ${props => (props.sizes ? '80px' : '60px')};
+  height: 60px;
+  object-fit: cover;
+
+  @media screen and (max-width: 600px) {
+    width: 50px;
+    height: 50px;
+  }
+`
+
 export const TechImage: StyledComponent<
   ForwardRefComponent<HTMLHeadingElement, HTMLMotionProps<'img'>>,
   any,
   Record<string, unknown>,
   never
 > = styled(motion.img)`
-  width: ${props => (props.sizes ? '90px' : '70px')};
-  height: 70px;
+  width: ${props => (props.sizes ? '80px' : '60px')};
+  height: 60px;
   object-fit: cover;
 
   @media screen and (max-width: 600px) {
@@ -785,8 +819,8 @@ export const TechImage: StyledComponent<
 export const ButtonsContainer = styled.div`
   display: flex;
   width: 100vw;
-  margin-top: 15px;
-  height: 100px;
+  margin-top: 5px;
+  height: 50px;
   align-items: center;
   justify-content: center;
   background: transparent;

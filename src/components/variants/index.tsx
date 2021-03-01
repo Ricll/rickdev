@@ -8,7 +8,18 @@ export const logoVariant = {
     x: 0,
     opacity: 1,
     rotate: 360,
-    transition: { duration: 3, type: 'ease' }
+    transition: { duration: 3, type: 'ease', delay: 5 }
+  }
+}
+
+export const textVariant = {
+  hidden: {
+    x: -300,
+    opacity: 0
+  },
+  visible: {
+    x: 0,
+    opacity: 1
   }
 }
 export const pageVariants: Variants = {
