@@ -618,13 +618,10 @@ export const HomeContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-
-  z-index: 2;
-
+  background: transparent;
   justify-content: center;
   align-items: center;
-  background: transparent;
+  z-index: 2;
   animation: menuEffect 2s linear;
 
   @keyframes menuEffect {
@@ -637,6 +634,7 @@ export const HomeContent = styled(motion.div)`
   }
 
   @media screen and (max-width: 600px) {
+    margin-top: 30px;
   }
 `
 export const AboutContent = styled(motion.div)`
