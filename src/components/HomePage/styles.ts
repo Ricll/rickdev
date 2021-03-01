@@ -828,7 +828,7 @@ export const About = styled(motion.button).attrs({
 
   @media screen and (max-width: 800px) {
     justify-content: start;
-    font-size: calc(24px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(26px + 6 * ((100vw - 320px) / 680));
   }
 `
 export const Home = styled(motion.button).attrs({
@@ -863,7 +863,7 @@ export const Home = styled(motion.button).attrs({
 
   @media screen and (max-width: 800px) {
     justify-content: start;
-    font-size: calc(24px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(26px + 6 * ((100vw - 320px) / 680));
   }
 `
 
@@ -899,7 +899,7 @@ export const Projects = styled(motion.button).attrs({
 
   @media screen and (max-width: 800px) {
     justify-content: end;
-    font-size: calc(24px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(26px + 6 * ((100vw - 320px) / 680));
   }
 `
 export const Image = styled(motion.img)`
