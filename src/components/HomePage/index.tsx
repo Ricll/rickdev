@@ -99,62 +99,45 @@ const HomePage: React.FC = () => {
               variants={textVariant}
               transition={{ duration: 3, type: 'ease', delay: 2 }}
             >
+              {' '}
               I have more than 10 years of experience in the sales area.
               <br></br>
-              However, I have been studying programming to get a new opportunity
-              in the market for developing websites and mobile applications.
-              <br></br>
             </Text>
-            <TechsContainer>
-              <TechImage
-                src={'/html.webp'}
-                initial="hidden"
-                animate="visible"
-                variants={logoVariant}
-              />
-              <TechImage
-                src={'css.webp'}
-                initial="hidden"
-                animate="visible"
-                variants={logoVariant}
-              />
-              <TechImage
-                sizes
-                src={'jscriptlogo.png'}
-                initial="hidden"
-                animate="visible"
-                variants={logoVariant}
-              />
-              <TechImage
-                sizes
-                src={'react_logo.png'}
-                initial="hidden"
-                animate="visible"
-                variants={logoVariant}
-              />
-              <TechImage
-                sizes
-                src={'nodejs2.png'}
-                initial="hidden"
-                animate="visible"
-                variants={logoVariant}
-              />
-            </TechsContainer>
+
             <Text
               initial="hidden"
               animate="visible"
               variants={textVariant}
-              transition={{ duration: 3, type: 'ease', delay: 3 }}
+              transition={{ duration: 3, type: 'ease', delay: 7 }}
             >
-              Here you can see some of my projects. I hope you enjoy it. Stay in
-              touch.
+              However, I have been studying programming to get a new opportunity
+              in the market for developing websites and mobile applications.
+            </Text>
+            <Text
+              initial="hidden"
+              animate="visible"
+              variants={textVariant}
+              transition={{ duration: 3, type: 'ease', delay: 13 }}
+            >
+              Here you can see some of my projects. I hope you enjoy it.
+              <br></br> Stay in touch.
             </Text>
             <SocialContainer>
               <SocialLink href="https://github.com/Ricll">
-                <SocialImage src={'git.png'} />
+                <SocialImage
+                  initial="hidden"
+                  animate="visible"
+                  variants={logoVariant}
+                  src={'git.png'}
+                />
               </SocialLink>
               <SocialLink href="https://github.com/Ricll">
-                <SocialImage src={'linkedin.png'} />
+                <SocialImage
+                  initial="hidden"
+                  animate="visible"
+                  variants={logoVariant}
+                  src={'linkedin.png'}
+                />
               </SocialLink>
             </SocialContainer>
             <ButtonsContainer>

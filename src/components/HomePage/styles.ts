@@ -743,6 +743,7 @@ export const Text = styled(motion.div)`
   background: transparent;
   width: 50%;
   justify-content: center;
+  line-height: 50px;
   font-size: 1.7rem;
   color: #a29bfe;
   letter-spacing: 1px;
@@ -753,7 +754,8 @@ export const Text = styled(motion.div)`
   @media screen and (max-width: 800px) {
     font-size: calc(22px + 6 * ((100vw - 320px) / 680));
     letter-spacing: 0.5px;
-    margin-bottom: 20px;
+    line-height: 30px;
+    margin-bottom: 0px;
     width: 90%;
   }
 `
@@ -772,10 +774,11 @@ export const SocialContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 50%;
-  margin: 5px;
+  margin: 20px;
 
   @media screen and (max-width: 600px) {
     width: 100%;
+    margin: 20px;
   }
 `
 
@@ -940,7 +943,7 @@ export const Projects = styled(motion.button).attrs({
 export const Image = styled(motion.img)`
   width: 200px;
   height: 200px;
-  margin: 40px;
+  margin: 30px;
   background: none;
   border-radius: 50%;
   object-fit: cover;
@@ -952,6 +955,5 @@ export const Image = styled(motion.img)`
   @media screen and (max-width: 800px) {
     width: 190px;
     height: 190px;
-    margin: 30px;
   }
 `

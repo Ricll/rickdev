@@ -8,7 +8,7 @@ export const logoVariant = {
     x: 0,
     opacity: 1,
     rotate: 360,
-    transition: { duration: 3, type: 'ease', delay: 5 }
+    transition: { duration: 3, type: 'ease', delay: 19 }
   }
 }
 
