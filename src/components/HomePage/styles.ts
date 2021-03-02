@@ -754,7 +754,7 @@ export const Text = styled(motion.div)`
   @media screen and (max-width: 800px) {
     font-size: calc(22px + 6 * ((100vw - 320px) / 680));
     letter-spacing: 0.5px;
-    line-height: 45px;
+    line-height: 35px;
     margin-bottom: 0px;
     width: 90%;
   }
