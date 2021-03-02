@@ -688,7 +688,7 @@ export const Title = styled(motion.div)`
   span:nth-child(1n) {
     color: #a29bfe;
     -webkit-text-stroke-width: 1px;
-    animation: titleEffect 2s linear;
+    animation: titleEffect 4s linear;
 
     @keyframes titleEffect {
       from {
@@ -720,7 +720,7 @@ export const SubTitle = styled(motion.div)`
   span:nth-child(1n) {
     color: #a29bfe;
     -webkit-text-stroke-width: 1px;
-    animation: subEffect 2s linear;
+    animation: subEffect 4s linear;
 
     @keyframes subEffect {
       from {
@@ -743,7 +743,7 @@ export const Text = styled(motion.div)`
   background: transparent;
   width: 50%;
   justify-content: center;
-  line-height: 50px;
+  line-height: 40px;
   font-size: 1.7rem;
   color: #a29bfe;
   letter-spacing: 1px;
@@ -754,7 +754,7 @@ export const Text = styled(motion.div)`
   @media screen and (max-width: 800px) {
     font-size: calc(22px + 6 * ((100vw - 320px) / 680));
     letter-spacing: 0.5px;
-    line-height: 30px;
+    line-height: 45px;
     margin-bottom: 0px;
     width: 90%;
   }
@@ -786,6 +786,7 @@ export const SocialLink = styled(motion.a)`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 `
 
 export const SocialImage: StyledComponent<

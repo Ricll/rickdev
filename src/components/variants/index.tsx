@@ -8,7 +8,9 @@ export const logoVariant = {
     x: 0,
     opacity: 1,
     rotate: 360,
-    transition: { duration: 3, type: 'ease', delay: 19 }
+    transition: { duration: 3, type: 'ease', delay: 22 },
+    whileHover: { color: '#f1c40f', scale: 1.1 },
+    whileTap: { color: '#f1c40f', scale: 1.3 }
   }
 }
 
@@ -73,7 +75,7 @@ export const imageVariants = {
     transition: {
       duration: 1,
       type: 'ease',
-      delay: 3
+      delay: 6
     }
   }
 }

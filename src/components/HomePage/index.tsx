@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import {
+  FaGithubSquare,
+  FaFacebookSquare,
+  FaEnvelopeSquare
+} from 'react-icons/fa'
+
+import {
   imageVariants,
   pageVariants,
   logoVariant,
@@ -119,25 +125,42 @@ const HomePage: React.FC = () => {
               variants={textVariant}
               transition={{ duration: 3, type: 'ease', delay: 13 }}
             >
-              Here you can see some of my projects. I hope you enjoy it.
-              <br></br> Stay in touch.
+              Here you can see some of my projects. <br></br>I hope you enjoy
+              it.
+            </Text>
+            <Text
+              initial="hidden"
+              animate="visible"
+              variants={textVariant}
+              transition={{ duration: 3, type: 'ease', delay: 19 }}
+            >
+              {' '}
+              Stay in touch.
             </Text>
             <SocialContainer>
-              <SocialLink href="https://github.com/Ricll">
-                <SocialImage
-                  initial="hidden"
-                  animate="visible"
-                  variants={logoVariant}
-                  src={'git.png'}
-                />
+              <SocialLink
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+                href="https://github.com/Ricll"
+              >
+                <FaGithubSquare style={{ width: '50px', height: '50px' }} />
               </SocialLink>
-              <SocialLink href="https://github.com/Ricll">
-                <SocialImage
-                  initial="hidden"
-                  animate="visible"
-                  variants={logoVariant}
-                  src={'linkedin.png'}
-                />
+              <SocialLink
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+                href="https://github.com/Ricll"
+              >
+                <FaFacebookSquare style={{ width: '50px', height: '50px' }} />
+              </SocialLink>
+              <SocialLink
+                initial="hidden"
+                animate="visible"
+                variants={logoVariant}
+                href="https://github.com/Ricll"
+              >
+                <FaEnvelopeSquare style={{ width: '50px', height: '50px' }} />
               </SocialLink>
             </SocialContainer>
             <ButtonsContainer>
