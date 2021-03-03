@@ -4,9 +4,8 @@ import styled, { StyledComponent } from 'styled-components'
 export const Container = styled.div`
   display: column;
   position: absolute;
-  z-index: 2;
-
   width: 100%;
+  z-index: 2;
   min-height: 100vh;
   background: transparent;
 `
@@ -617,7 +616,9 @@ export const Stars3 = styled.div`
 export const HomeContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  position: absolute;
+  top: 6%;
+  flex: 1;
   background: transparent;
   justify-content: center;
   align-items: center;
@@ -640,9 +641,11 @@ export const HomeContent = styled(motion.div)`
 export const AboutContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  position: absolute;
+  top: 6%;
+  flex: 1;
   z-index: 2;
-  margin-top: 0px;
+
   justify-content: center;
   align-items: center;
   background: transparent;
