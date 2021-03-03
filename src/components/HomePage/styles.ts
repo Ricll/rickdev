@@ -639,14 +639,12 @@ export const HomeContent = styled(motion.div)`
   }
 `
 export const AboutContent = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   position: absolute;
-  top: 6%;
+  flex-direction: column;
   flex: 1;
   z-index: 2;
-
-  justify-content: center;
+  justify-items: center;
   align-items: center;
   background: transparent;
   animation: menuEffect 2s linear;
