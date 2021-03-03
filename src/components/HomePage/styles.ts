@@ -4,6 +4,7 @@ import styled, { StyledComponent } from 'styled-components'
 export const Container = styled.div`
   display: column;
   position: absolute;
+
   width: 100%;
   z-index: 2;
   min-height: 100vh;
@@ -615,14 +616,14 @@ export const Stars3 = styled.div`
 
 export const HomeContent = styled(motion.div)`
   display: flex;
-  flex-direction: column;
   position: absolute;
-  top: 5vh;
-  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  height: 95%;
+  z-index: 2;
   background: transparent;
   justify-content: center;
   align-items: center;
-  z-index: 2;
   animation: menuEffect 2s linear;
 
   @keyframes menuEffect {
@@ -639,14 +640,13 @@ export const HomeContent = styled(motion.div)`
   }
 `
 export const AboutContent = styled(motion.div)`
-  display: grid;
+  display: column;
   position: absolute;
-  flex-direction: column;
-  flex: 1;
+  width: 100%;
   z-index: 2;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-  background: transparent;
+  background: red;
   animation: menuEffect 2s linear;
 
   @keyframes menuEffect {
