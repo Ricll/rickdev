@@ -617,7 +617,7 @@ export const HomeContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 6%;
+  top: 5vh;
   flex: 1;
   background: transparent;
   justify-content: center;
