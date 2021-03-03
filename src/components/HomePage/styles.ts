@@ -617,9 +617,10 @@ export const Stars3 = styled.div`
 export const HomeContent = styled(motion.div)`
   display: flex;
   position: absolute;
+  top: 10%;
   flex-direction: column;
-  width: 100%;
-  height: 95%;
+  flex: 1;
+  height: auto;
   z-index: 2;
   background: transparent;
   justify-content: center;
@@ -636,17 +637,20 @@ export const HomeContent = styled(motion.div)`
   }
 
   @media screen and (max-width: 600px) {
-    margin-top: 50px;
   }
 `
 export const AboutContent = styled(motion.div)`
-  display: column;
+  display: flex;
   position: absolute;
-  width: 100%;
+  top: 10%;
+  flex-direction: column;
+  flex: 1;
+  height: auto;
   z-index: 2;
+  background: transparent;
   justify-content: center;
   align-items: center;
-  background: red;
+
   animation: menuEffect 2s linear;
 
   @keyframes menuEffect {
@@ -684,7 +688,7 @@ export const Title = styled(motion.div)`
   color: #a29bfe;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
-  padding: 10px;
+  padding: 0px;
   z-index: 2;
   span:nth-child(1n) {
     color: #a29bfe;
